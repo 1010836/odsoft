@@ -1,0 +1,5 @@
+task myTask1 << {println "This is myTask1"}
+task myTask2 << {println "This is myTask2"}
+task myTask3 << {println "This is myTask3"}
+myTask2.dependsOn myTask1
+myTask3.mustRunAfter myTask1
