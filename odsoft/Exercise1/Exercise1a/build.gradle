@@ -1,0 +1,54 @@
+/*
+    
+
+Exercise:
+
+1. Order the execution and configure dependencies for  "Task1", "Task2" and "Task3"  to ensure that to run Task3, Task2 must be executed first. Task2, in turn,  requires Task1 to run before it.
+
+2. Configure dependencies for the "Task3" and "Task4" such that Task4 requires Task2 and if Task3 is to be done, Task4 is not allowed to run before Task3
+
+3. Configure dependencies for "Task51" and "Task52" in order to both include the execution of Task3, but "Task52" is also to include the execution of Task4.
+
+4. Run "Task51 " and "Task52 " individually using Gradle and analyse the results to verify if everything is correct.
+
+*/
+
+
+
+
+task Task1 {
+    doLast {
+        println "Task1"
+    }
+}
+
+task Task2 {
+    doLast {
+        println "Task2"
+    }
+}
+
+task Task3 {
+    doLast {
+        println "Task3"
+    }
+}
+
+task Task4 {
+    doLast {
+        println "Task4"
+    }
+}
+
+task Task51 {
+    doLast {
+        println "Task51"
+    }
+}
+
+task Task52 {
+    doLast {
+        println "Task52"
+    }
+}
+
