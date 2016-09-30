@@ -1,0 +1,27 @@
+//Apagar pasta de buil
+gradle clean
+
+  //Resultado
+  :clean UP-TO-DATE
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.707 secs
+
+//Compilar o projecto Java
+gradle classes
+
+  //Resultado
+  :compileJava
+  :processResources UP-TO-DATE
+  :classes
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.685 secs
+
+//Executar projecto Java compilado
+java -cp ./build/classes/main/ example.HelloWorld
+
+  //Resultado
+  hello, world

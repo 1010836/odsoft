@@ -1,0 +1,9 @@
+gradle printCourseNam
+
+//Resultado
+:printCourseName
+"EDOM"
+
+BUILD SUCCESSFUL
+
+Total time: 0.92 secs

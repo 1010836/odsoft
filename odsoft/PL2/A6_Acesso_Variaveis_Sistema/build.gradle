@@ -1,0 +1,3 @@
+task printEnvironmentVariable << {
+println System.getenv("PATH")
+}

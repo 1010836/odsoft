@@ -1,0 +1,4 @@
+gradle myTask2 myTask3
+1,2,3
+gradle myTask3 myTask2
+3,1,2

@@ -1,0 +1,22 @@
+gradle myTask1
+
+//Dá erro devido a dependencias ciclicas
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Circular dependency between the following tasks:
+:myTask1
+\--- :myTask2
+     \--- :myTask1 (*)
+
+(*) - details omitted (listed previously)
+
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 2.507 secs

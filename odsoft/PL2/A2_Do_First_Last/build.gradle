@@ -1,0 +1,7 @@
+task myTask1
+myTask1.doLast{println "Last with doLast"}
+myTask1.doLast({println "Last with doLast again"})
+myTask1.leftShift {println "Last with leftShift"}
+myTask1 << {println "Last with <<"}
+myTask1.doFirst {println "First with doFirst"}
+myTask1.doFirst({println "doFirst again"})

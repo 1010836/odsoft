@@ -1,0 +1,9 @@
+gradle printEnvironmentVariable
+
+//Resultado
+:printEnvironmentVariable
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/p0/bin:/home/p0/lib:/home/p0/A3_Corrente/A4_Universidade/2017/A4_1_Semestre/A1_ODSOFT/A2_PL2/A1_Gradle/bin
+
+BUILD SUCCESSFUL
+
+Total time: 0.669 secs

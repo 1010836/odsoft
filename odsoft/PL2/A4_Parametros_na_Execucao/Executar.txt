@@ -1,0 +1,8 @@
+gradle -PcourseName="ODSOFT" printCourseName
+//Resultado
+:printCourseName
+ODSOFT
+
+BUILD SUCCESSFUL
+
+Total time: 0.757 secs

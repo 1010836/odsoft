@@ -1,0 +1,4 @@
+task myTask1 << {println "This is myTask1"}
+task myTask2 << {println "This is myTask2"}
+myTask1.dependsOn myTask2
+myTask2.dependsOn myTask1

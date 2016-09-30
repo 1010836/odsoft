@@ -1,0 +1,7 @@
+gradle CopyTXT
+//Resultado
+:copyTXT
+
+BUILD SUCCESSFUL
+
+Total time: 1.24 secs

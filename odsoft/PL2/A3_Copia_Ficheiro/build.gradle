@@ -1,0 +1,5 @@
+task copyTXT(type: Copy){
+from 'A1_Origem'
+include '*.txt'
+into 'A2_Destino'
+}

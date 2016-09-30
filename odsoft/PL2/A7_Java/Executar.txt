@@ -1,0 +1,17 @@
+//Compilar o projecto Java
+gradle classes
+
+  //Resultado
+  :compileJava
+  :processResources UP-TO-DATE
+  :classes
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.685 secs
+
+//Executar projecto Java compilado
+java -cp ./build/classes/main/ example.HelloWorld
+
+  //Resultado
+  hello, world

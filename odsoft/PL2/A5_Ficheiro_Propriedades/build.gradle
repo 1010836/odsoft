@@ -1,0 +1,5 @@
+task printCourseName << {
+Properties props = new Properties()
+props.load(new FileInputStream("course.properties"))
+println props.get('courseName')
+}
