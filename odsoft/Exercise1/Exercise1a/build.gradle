@@ -1,15 +1,20 @@
 /*
-    
+
 
 Exercise:
 
-1. Order the execution and configure dependencies for  "Task1", "Task2" and "Task3"  to ensure that to run Task3, Task2 must be executed first. Task2, in turn,  requires Task1 to run before it.
+1. Order the execution and configure dependencies for  "Task1", "Task2" and "Task3"
+   to ensure that to run Task3, Task2 must be executed first. Task2, in turn,
+   requires Task1 to run before it.
 
-2. Configure dependencies for the "Task3" and "Task4" such that Task4 requires Task2 and if Task3 is to be done, Task4 is not allowed to run before Task3
+2. Configure dependencies for the "Task3" and "Task4" such that Task4 requires Task2
+   and if Task3 is to be done, Task4 is not allowed to run before Task3
 
-3. Configure dependencies for "Task51" and "Task52" in order to both include the execution of Task3, but "Task52" is also to include the execution of Task4.
+3. Configure dependencies for "Task51" and "Task52" in order to both include the execution of Task3,
+   but "Task52" is also to include the execution of Task4.
 
-4. Run "Task51 " and "Task52 " individually using Gradle and analyse the results to verify if everything is correct.
+4. Run "Task51 " and "Task52 " individually using Gradle and analyse the results to verify
+   if everything is correct.
 
 */
 
@@ -34,11 +39,17 @@ task Task3 {
     }
 }
 
+Task3.dependsOn Task2
+Task2.dependsOn Task1
+
 task Task4 {
     doLast {
         println "Task4"
     }
 }
+
+Task4.dependsOn Task2
+Task4.mustRunAfter Task3
 
 task Task51 {
     doLast {
@@ -52,3 +63,6 @@ task Task52 {
     }
 }
 
+Task51.dependsOn Task3
+Task52.dependsOn Task3
+Task52.dependsOn Task4

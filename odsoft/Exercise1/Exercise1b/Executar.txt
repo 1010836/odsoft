@@ -1,0 +1,12 @@
+//Comando para gerar o JAR
+gradle jar
+
+  //Resultado
+  :compileJava
+  :processResources UP-TO-DATE
+  :classes
+  :jar
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.735 secs

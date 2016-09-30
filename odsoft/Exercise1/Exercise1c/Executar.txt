@@ -1,0 +1,18 @@
+//Executar teste no gradle
+gradle test
+
+  //Resultado
+  :compileJava
+  :processResources UP-TO-DATE
+  :classes
+  :compileTestJava
+  :processTestResources UP-TO-DATE
+  :testClasses
+  :test
+
+  BUILD SUCCESSFUL
+
+  Total time: 1.153 secs
+
+  //Relatorio
+  /home/p0/A3_Corrente/A4_Universidade/2017/A4_1_Semestre/A1_ODSOFT/odsoft-2016-nmb-g101/odsoft/PL2/A7A2_Testes/build/reports/tests/test

@@ -1,0 +1,99 @@
+// 1. Executar a 1
+//   1.1 Não tem dependencias apenas ela
+gradle Task1
+
+  //Resultado
+  :Task1
+  Task1
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.767 secs
+
+// 2. Executar a 2
+//   2.1 Tem que executar a 1 antes da 2
+gradle Task2
+
+  //Resultado
+  :Task1
+  Task1
+  :Task2
+  Task2
+
+  BUILD SUCCESSFUL
+
+// 3. Executar a 3
+//  3.1 Tem que executar a 2
+//    3.1.1 A 2 tem que executar a 1
+//  3.2 Ordem 1,2,3
+gradle Task3
+
+  //Resultado
+  :Task1
+  Task1
+  :Task2
+  Task2
+  :Task3
+  Task3
+
+  BUILD SUCCESSFUL
+
+// 4. Executar a 4 e 3
+//   4.1 A 4 Tem que excutar ante a 2
+//   4.2 A 2 tem que executar 1
+//   4.3 A 4 tem que ser executada sempre depois da 3
+gradle Task4 Task3
+
+  //Resultado
+  :Task1
+  Task1
+  :Task2
+  Task2
+  :Task3
+  Task3
+  :Task4
+  Task4
+
+// 5. Executar a 51
+//   5.1 A Task 51 obriga a Task 3
+//     5.1.1 A 3 obriga a 2
+//       5.1.1.1 A 2 obriga a 1
+gradle Task51
+
+  //Resultado
+  :Task1
+  Task1
+  :Task2
+  Task2
+  :Task3
+  Task3
+  :Task51
+  Task51
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.939 secs
+
+// 6. Executar a 52
+//   6.1 A 52 obriga a 3
+//     6.1.1 A 3 obriga a 2
+//       6.1.1.1 A 2 obriga a 1
+//   6.2 A 52 obriga a 4
+//     6.2.1 A 4 tem que ser sempre depois da 3
+gradle Task52
+
+  //Resultado
+  :Task1
+  Task1
+  :Task2
+  Task2
+  :Task3
+  Task3
+  :Task4
+  Task4
+  :Task52
+  Task52
+
+  BUILD SUCCESSFUL
+
+  Total time: 0.659 secs
