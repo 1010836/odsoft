@@ -10,6 +10,7 @@
             <widgets>
                 <decorator-screen name="HelloWorldCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
+                    	<label text="Hello ${userLogin.userLoginId}!"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
