@@ -11,6 +11,7 @@
                 <decorator-screen name="HelloWorldCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                     	<label text="Hello ${userLogin.userLoginId}!"/>
+                    	<label text="Last update to your record: ${userLogin.lastUpdatedStamp}."/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
