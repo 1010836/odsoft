@@ -45,42 +45,54 @@ public class EDOMRestaurantExercise1 {
 		beverages.add(beverage2);
 		
 		// Prompts the list of dishes to user and waits for his choice
+		ArrayList<Dish> orderDishes = new ArrayList<Dish>();
+		ArrayList<Beverage> orderBeverages = new ArrayList<Beverage>();
 		System.out.println("Bem-vindo ao Super Restaurante, " + client.getName() + ".\n");
 		System.out.println("Selecione o prato:\n");
-		for (int i=0; i < dishes.size(); i++){
+		for (int i = 0; i < dishes.size(); i++){
 			System.out.println(i + " - " + dishes.get(i).getDenomination() + " - " + dishes.get(i).getCategory().getName());
 		}
 		System.out.println("\nIndique o número da sua escolha, pf: ");
+		String scanString;
+		int scanInt;
 		Scanner scan = new Scanner(System.in);
-		String something;
-		try {
-			something= scan.nextLine();
-		} finally {
-			scan.close();
-		}
-		//System.out.println(something);
-		/*for (int j = 0; j < dishes.size(); j++) {
-			if (scan.nextInt() == j) {
-				order.setDish(dishes.get(j));
+		do {
+			scanString = scan.nextLine();
+			scanInt = Integer.parseInt(scanString);
+			for (int j = 0; j < dishes.size(); j++) {
+				if (scanInt == j) {
+					orderDishes.add(dishes.get(j));
+				}
 			}
-		}*/
-		//System.out.println("O prato " + order.getDish().getDenomination() + " foi adicionado à sua ordem de compra.");
+			if (scanInt != -1) { System.out.println("\nPrato adicionado à sua ordem de compra. Prima novamente uma opção para adicionar outro prato ou -1 para avançar.\n"); }
+		} while (scanInt != -1);
+		order.setDish(orderDishes);
 		
 		// Prompts the list of beverages to user and waits for his choice
-		/*System.out.println("Selecione a bebida:\n");
+		System.out.println("Selecione a bebida:\n");
 		for (int i=0; i < beverages.size(); i++){
 			System.out.println(i + " - " + beverages.get(i).getDenomination() + " - " + beverages.get(i).getCategory().getName());
 		}
 		System.out.println("\nIndique o número da sua escolha, pf: ");
-		Scanner scan2 = new Scanner(System.in);
-		for (int j = 0; j < beverages.size(); j++) {
-			String a = scan2.nextLine();
-			int b = Integer.parseInt(a);
-			if (b == j) {
-				order.setBeverage(beverages.get(j));
+		do {
+			scanString = scan.nextLine();
+			scanInt = Integer.parseInt(scanString);
+			for (int k = 0; k < beverages.size(); k++) {
+				if (scanInt == k) {
+					orderBeverages.add(beverages.get(k));
+				}
 			}
+			if (scanInt != -1) { System.out.println("\nBebida adicionada à sua ordem de compra. Prima novamente uma opção para adicionar outra bebida ou -1 para avançar."); }
+		} while (scanInt != -1);
+		order.setBeverage(orderBeverages);
+		
+		// Prints the order
+		for (int p = 0; p < order.getDishes().size(); p++) {
+			System.out.println(order.getDishes().get(p).getDenomination());
 		}
-		System.out.println(order.getBeverage().getDenomination() + " foi adicionado à sua ordem de compra.");
-		*/
+		
+		for (int m = 0; m < order.getDishes().size(); m++) {
+			System.out.println(order.getBeverages().get(m).getDenomination());
+		}
 	}
 }

@@ -1,24 +1,24 @@
+import java.util.ArrayList;
 
 public class Order {
-	private int id;
 	private Client client;
-	private Dish dish;
-	private Beverage beverage;
-
-	public Dish getDish() {
-		return dish;
+	private ArrayList<Dish> dishes;
+	private ArrayList<Beverage> beverages;
+	
+	public void setDish(ArrayList<Dish> dish) {
+		this.dishes = dish;
 	}
 
-	public void setDish(Dish dish) {
-		this.dish = dish;
+	public ArrayList<Dish> getDishes() {
+		return dishes;
 	}
 
-	public Beverage getBeverage() {
-		return beverage;
+	public void setBeverage(ArrayList<Beverage> beverages) {
+		this.beverages = beverages;
 	}
-
-	public void setBeverage(Beverage beverage) {
-		this.beverage = beverage;
+	
+	public ArrayList<Beverage> getBeverages() {
+		return beverages;
 	}
 
 	public Client getClient() {
@@ -27,13 +27,5 @@ public class Order {
 
 	public void setClient(Client c) {
 		this.client = c;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 }
