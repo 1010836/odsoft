@@ -197,4 +197,83 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_XRdg841CEeaLScU7Lj13ug" name="invoice" type="_TCNTEIW_Eeayxcln5ofSvg" association="_XRc54I1CEeaLScU7Lj13ug"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_XRdg8o1CEeaLScU7Lj13ug" name="orderlines" type="_cxxkUI1BEeaLScU7Lj13ug" association="_XRc54I1CEeaLScU7Lj13ug"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aH40sI20EeaULclivGC-Sw" memberEnd="_aH40tI20EeaULclivGC-Sw _aH40s420EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aH40sY20EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aH40so20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aH40s420EeaULclivGC-Sw" name="dishe" type="_aILIkI20EeaULclivGC-Sw" association="_aH40sI20EeaULclivGC-Sw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aH40tI20EeaULclivGC-Sw" name="orderlines" type="_aIOL4I20EeaULclivGC-Sw" association="_aH40sI20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aIIFQI20EeaULclivGC-Sw" memberEnd="_aIIFRI20EeaULclivGC-Sw _aIIFQ420EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aIIFQY20EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aIIFQo20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIIFQ420EeaULclivGC-Sw" name="categories" type="_aIMWsI20EeaULclivGC-Sw" association="_aIIFQI20EeaULclivGC-Sw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIIFRI20EeaULclivGC-Sw" name="order" type="_aILvoY20EeaULclivGC-Sw" aggregation="composite" association="_aIIFQI20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIIsUI20EeaULclivGC-Sw" name="Invoice"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aIJTYI20EeaULclivGC-Sw" memberEnd="_aIJTZI20EeaULclivGC-Sw _aIJTY420EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aIJTYY20EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aIJTYo20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIJTY420EeaULclivGC-Sw" name="invoice" type="_aIIsUI20EeaULclivGC-Sw" association="_aIJTYI20EeaULclivGC-Sw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIJTZI20EeaULclivGC-Sw" name="orderlines" type="_aIOL4I20EeaULclivGC-Sw" association="_aIJTYI20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIJ6cI20EeaULclivGC-Sw" name="Beverage">
+    <generalization xmi:type="uml:Generalization" xmi:id="_aIJ6cY20EeaULclivGC-Sw" general="_aILvoY20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIKhgI20EeaULclivGC-Sw" name="Order"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aILIkI20EeaULclivGC-Sw" name="Dishe">
+    <generalization xmi:type="uml:Generalization" xmi:id="_aILIkY20EeaULclivGC-Sw" general="_aILvoY20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aILvoI20EeaULclivGC-Sw" name="Person">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_V80F8I21EeaULclivGC-Sw" name="name" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DE7Z8I21EeaULclivGC-Sw" name="getName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_IRQ78I21EeaULclivGC-Sw" name="setName" concurrency="concurrent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_py5fkI21EeaULclivGC-Sw" name="Name"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aILvoY20EeaULclivGC-Sw" name="Product">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_FHWIMI22EeaULclivGC-Sw" name="denomination" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_NAXS4I22EeaULclivGC-Sw" name="category" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kOVOUI22EeaULclivGC-Sw" name="setDenomination"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_loQOoI22EeaULclivGC-Sw" name="getDenomination"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_m1mykI22EeaULclivGC-Sw" name="setCategory"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_n3d4MI22EeaULclivGC-Sw" name="getCategory"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIMWsI20EeaULclivGC-Sw" name="Categories">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_A25xQI23EeaULclivGC-Sw" name="name" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Bp1qEI23EeaULclivGC-Sw" name="setName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DcX-sI23EeaULclivGC-Sw" name="getName"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIMWsY20EeaULclivGC-Sw" name="Client">
+    <generalization xmi:type="uml:Generalization" xmi:id="_aIMWso20EeaULclivGC-Sw" general="_aILvoI20EeaULclivGC-Sw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_aIMWs420EeaULclivGC-Sw" name="order" type="_aIKhgI20EeaULclivGC-Sw" association="_aIOL4I20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aIM9wI20EeaULclivGC-Sw" memberEnd="_aIM9xI20EeaULclivGC-Sw _aIM9w420EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aIM9wY20EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aIM9wo20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIM9w420EeaULclivGC-Sw" name="beverage" type="_aIJ6cI20EeaULclivGC-Sw" association="_aIM9wI20EeaULclivGC-Sw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIM9xI20EeaULclivGC-Sw" name="orderlines" type="_aIOL4I20EeaULclivGC-Sw" association="_aIM9wI20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aINk0I20EeaULclivGC-Sw" name="Employee">
+    <generalization xmi:type="uml:Generalization" xmi:id="_aINk0Y20EeaULclivGC-Sw" general="_aILvoI20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_aINk0o20EeaULclivGC-Sw" memberEnd="_aINk1o20EeaULclivGC-Sw _aINk1Y20EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aINk0420EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aINk1I20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aINk1Y20EeaULclivGC-Sw" name="invoice" type="_aIIsUI20EeaULclivGC-Sw" association="_aINk0o20EeaULclivGC-Sw"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aINk1o20EeaULclivGC-Sw" name="client" type="_aIMWsY20EeaULclivGC-Sw" association="_aINk0o20EeaULclivGC-Sw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:AssociationClass" xmi:id="_aIOL4I20EeaULclivGC-Sw" name="OrderLines" memberEnd="_aIMWs420EeaULclivGC-Sw _aIOL4420EeaULclivGC-Sw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aIOL4Y20EeaULclivGC-Sw" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aIOL4o20EeaULclivGC-Sw" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yO4_AI22EeaULclivGC-Sw" name="quantity" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_H-GdcI23EeaULclivGC-Sw" name="setQuantity"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JExxoI23EeaULclivGC-Sw" name="getQuantity"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_aIOL4420EeaULclivGC-Sw" name="client" type="_aIMWsY20EeaULclivGC-Sw" association="_aIOL4I20EeaULclivGC-Sw"/>
+  </packagedElement>
 </uml:Model>
