@@ -169,8 +169,8 @@ public class ProductResource {
 		LocalDispatcher dispatcher = org.apache.ofbiz.service.ServiceDispatcher.getLocalDispatcher("default", delegator);
 
 		Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), "productName",
-				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "login.username",
-				username, "login.password", password);
+				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "description",
+				jsonObj.getString("description"), "login.username", username, "login.password", password);
 
 		Map<String, Object> result = FastMap.newInstance();
 		try {
@@ -337,7 +337,8 @@ public class ProductResource {
 
 		Map<String, String> paramMap = UtilMisc.toMap("productId", productId, "internalName",
 				jsonObj.getString("internalName"), "productName", jsonObj.getString("productName"), "productTypeId",
-				jsonObj.getString("productTypeId"), "login.username", username, "login.password", password);
+				jsonObj.getString("productTypeId"), "description", jsonObj.getString("description"),
+				"login.username", username, "login.password", password);
 				// "brandName", jsonObj.getString("brandName"));
 
 		Map<String, Object> result = FastMap.newInstance();
