@@ -23,6 +23,7 @@ package restcomponent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -45,14 +46,17 @@ import org.apache.ofbiz.base.conversion.ConversionException;
 import org.apache.ofbiz.base.lang.JSON;
 import org.apache.ofbiz.base.util.Debug;
 import org.apache.ofbiz.base.util.UtilMisc;
+import org.apache.ofbiz.base.util.UtilValidate;
 import org.apache.ofbiz.entity.DelegatorFactory;
 import org.apache.ofbiz.entity.GenericDelegator;
 import org.apache.ofbiz.entity.GenericEntityException;
 import org.apache.ofbiz.entity.GenericValue;
-
+import org.apache.ofbiz.entity.condition.EntityCondition;
+import org.apache.ofbiz.entity.condition.EntityOperator;
 import org.apache.ofbiz.entity.util.Converters.GenericValueToJSON;
 import org.apache.ofbiz.service.GenericServiceException;
 import org.apache.ofbiz.service.LocalDispatcher;
+import org.apache.ofbiz.service.ServiceUtil;
 
 import javolution.util.FastMap;
 
@@ -168,8 +172,12 @@ public class ProductResource {
 		GenericDelegator delegator = (GenericDelegator) DelegatorFactory.getDelegator("default");
 		LocalDispatcher dispatcher = org.apache.ofbiz.service.ServiceDispatcher.getLocalDispatcher("default", delegator);
 
+		/*Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), "productName",
+				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "login.username",
+				username, "login.password", password);*/
+		
 		Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), "productName",
-				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "description",
+				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "description", 
 				jsonObj.getString("description"), "login.username", username, "login.password", password);
 
 		Map<String, Object> result = FastMap.newInstance();
@@ -259,6 +267,68 @@ public class ProductResource {
 		// shouldn't ever get here ... should we?
 		throw new RuntimeException("Invalid ");
 	}
+	
+	/**
+	 * This method returns a product given its productName.
+	 * 
+	 * @param productName
+	 * @return
+	 */
+	@GET
+	@Produces("application/json")
+	@Path("/name/{name}")
+	public Response getProductByName(@PathParam("name") String productName) {
+		// name example="Giant Widget with variant explosion"
+
+		String username = null;
+		String password = null;
+
+		try {
+			username = httpRequest.getHeader("login.username");
+			password = httpRequest.getHeader("login.password");
+		} catch (NullPointerException e) {
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
+					.build();
+		}
+
+		if (username == null || password == null) {
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
+					.build();
+		}
+
+		// Within an event, get the GenericDelegator from the request 
+		// attribute. As shown here 
+		//GenericDelegator delegator = (GenericDelegator) httpRequest.getAttribute("delegator"); 
+		//List<GenericValue> products = null; 
+		
+		GenericDelegator delegator = (GenericDelegator) DelegatorFactory.getDelegator("default");
+		List<GenericValue> products = null;
+		
+		try {    
+			// The delegator.findList() method returns a Java List or null    
+			// if no values are found    
+			products = delegator.findList("Product", EntityCondition.makeCondition("productName", 
+					EntityOperator.EQUALS, productName), null, null, null, false); 
+		} catch (GenericEntityException e) { 
+			return (Response) ServiceUtil.returnError(e.getMessage()); 
+		} 
+		// recipes contains a list of GenericValue objects. Each object 
+		// represents a single returned record from the data source. 
+		// Loop through this list and extract values as appropriate 
+		if (products != null) {
+
+			String response = Util.convertListGenericValueToJSON(products);
+
+			if (response == null) {
+				return Response.serverError().entity("Erro na conversao do JSON!").build();
+			}
+
+			return Response.ok(response).type("application/json").build();
+		}
+
+		// shouldn't ever get here ... should we?
+		throw new RuntimeException("Invalid ");
+	}	
 
 	/**
 	 * This method returns a product given its id.
@@ -337,8 +407,8 @@ public class ProductResource {
 
 		Map<String, String> paramMap = UtilMisc.toMap("productId", productId, "internalName",
 				jsonObj.getString("internalName"), "productName", jsonObj.getString("productName"), "productTypeId",
-				jsonObj.getString("productTypeId"), "description", jsonObj.getString("description"),
-				"login.username", username, "login.password", password);
+				jsonObj.getString("productTypeId"), "login.username", username, "login.password", password,
+				"description", jsonObj.getString("description"));
 				// "brandName", jsonObj.getString("brandName"));
 
 		Map<String, Object> result = FastMap.newInstance();

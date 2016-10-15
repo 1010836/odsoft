@@ -92,8 +92,45 @@ public class Main {
 			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
 			else System.out.println(", Product Name="+jsonObj.getString("productName"));
-			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
-			else System.out.println(", Description="+jsonObj.getString("description"));
+        }
+        else
+        {
+        	System.out.println("Error!");        	
+        }
+	}
+	
+	/**
+	 * This method demonstrates how to use rest to get information about a product
+	 * To get information about the product entity follow the url:
+	 * https://localhost:8443/webtools/control/ArtifactInfo?name=Product&type=entity
+	 * Note: see the "restcomponent" for details on how the rest service is implemented on the server
+	 */
+	public static void testGetProductByName(String productName) {
+        Client client = ClientBuilder.newClient();
+
+    	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
+    	headerMap.put("login.username", Arrays.asList(new Object [] { "admin" }));
+       	headerMap.put("login.password", Arrays.asList(new Object [] { "ofbiz" }));
+ 
+        Response response = client.target("http://localhost:8080/restcomponent/product/name/"+productName).request("application/json")
+        		.headers(headerMap).get();
+
+        if (response.getStatus()==200) {
+        	String stringObj=response.readEntity(String.class);
+        	
+        	JsonReader jsonReader = Json.createReader(new StringReader(stringObj));
+        	
+        	JsonArray jsonArray = jsonReader.readArray();
+        	        	
+        	System.out.println(">>> List of all Products with product name: " + productName);
+        	for (int i=0; i<jsonArray.size(); i=i+1) {
+    			JsonObject jsonObj=jsonArray.getJsonObject(i);
+    			
+    			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
+    			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
+    			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+        	}
+        	System.out.println(">>>");        	
         }
         else
         {
@@ -125,8 +162,6 @@ public class Main {
     			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
     			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
     			else System.out.println(", Product Name="+jsonObj.getString("productName"));
-    			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
-    			else System.out.println(", Description="+jsonObj.getString("description"));
         	}
         	System.out.println(">>>");        	
         }
@@ -147,7 +182,7 @@ public class Main {
        	     .add("internalName", "internal teste1")
        	     .add("productName", "teste1")
        	     .add("productTypeId", "FINISHED_GOOD")
-       	     .add("description", "This is a description.")
+       	     .add("description", "This is a description")
        	     .build();
 
         Response response = client.target("http://localhost:8080/restcomponent/product").request("application/json")
@@ -177,7 +212,8 @@ public class Main {
         }
 	}
 
-	public static void testUpdateProduct(String productId, String newInternalName, String newProductName, String newProductDescription) {
+	public static void testUpdateProduct(String productId, String newInternalName, String newProductName,
+			String newDescription) {
         Client client = ClientBuilder.newClient();
 
     	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
@@ -188,7 +224,7 @@ public class Main {
        	     .add("internalName", newInternalName)
        	     .add("productName", newProductName)
        	     .add("productTypeId", "FINISHED_GOOD")
-       	     .add("description", newProductDescription)
+       	     .add("description", newDescription)
        	     .build();
 
         Response response = client.target("http://localhost:8080/restcomponent/product/"+productId).request("application/json")
@@ -205,8 +241,6 @@ public class Main {
 			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
 			else System.out.println(", Product Name="+jsonObj.getString("productName"));
-			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
-			else System.out.println(", Description="+jsonObj.getString("description"));
         }
         else
         {
@@ -216,14 +250,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		String productId=null;
+		
 		testPing();
+		System.out.println("");
+		
 		testGetProduct("GC-001-C100");
+		System.out.println("");
+		
+		testGetProductByName("Gift Card Activation"); // devolve uma lista, porque o productName não é único
+		System.out.println("");
+		
 		testGetProducts();
-		productId=testCreateProduct();
-		if (productId!=null) {
+		System.out.println("");
+		
+		productId = testCreateProduct();
+		if (productId != null) {
 			testGetProduct(productId);
-			// Delete the previous product - unavailable operation
 			testUpdateProduct(productId, "Update Internal Name Test", "Update Product Name Test", "Update Product Description");
+			// Delete the previous product - unavailable operation
 		}
 	}
 }
