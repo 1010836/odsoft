@@ -171,10 +171,6 @@ public class ProductResource {
 		// Lets now invoke the ofbiz service that creates a product
 		GenericDelegator delegator = (GenericDelegator) DelegatorFactory.getDelegator("default");
 		LocalDispatcher dispatcher = org.apache.ofbiz.service.ServiceDispatcher.getLocalDispatcher("default", delegator);
-
-		/*Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), "productName",
-				jsonObj.getString("productName"), "productTypeId", jsonObj.getString("productTypeId"), "login.username",
-				username, "login.password", password);*/
 		
 		Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), 
 				"productName",jsonObj.getString("productName"), 
@@ -410,7 +406,6 @@ public class ProductResource {
 				"comments", jsonObj.getString("comments"),
 				"login.username", username, 
 				"login.password", password);
-				// "brandName", jsonObj.getString("brandName"));
 
 		Map<String, Object> result = FastMap.newInstance();
 		try {

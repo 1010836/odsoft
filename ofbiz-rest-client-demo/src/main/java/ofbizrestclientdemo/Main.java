@@ -93,6 +93,10 @@ public class Main {
 					", Internal Name=" + jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
 			else System.out.println(", Product Name=" + jsonObj.getString("productName"));
+			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
+			else System.out.println(", Description=" + jsonObj.getString("description"));
+			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
+			else System.out.println(", Comments=" + jsonObj.getString("comments")); 
         }
         else
         {
@@ -131,6 +135,10 @@ public class Main {
     					", Internal Name=" + jsonObj.getString("internalName"));
     			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
     			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+    			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
+    			else System.out.println(", Description=" + jsonObj.getString("description"));
+    			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
+    			else System.out.println(", Comments=" + jsonObj.getString("comments")); 
         	}
         	System.out.println(">>>");        	
         }
@@ -164,6 +172,10 @@ public class Main {
     			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
     			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
     			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+    			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
+    			else System.out.println(", Description=" + jsonObj.getString("description"));
+    			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
+    			else System.out.println(", Comments=" + jsonObj.getString("comments")); 
         	}
         	System.out.println(">>>");        	
         }
