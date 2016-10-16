@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.dsl.mindmap:Map xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.dsl.mindmap="http://org/eclipse/dsl/mindmap">
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Restaurant" subtopics="//@elements.1 //@elements.4 //@elements.6"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Lunch Service" subtopics="//@elements.2 //@elements.3" parent="//@elements.0"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Order" parent="//@elements.1"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Payment" parent="//@elements.1"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Evening Service" subtopics="//@elements.5" parent="//@elements.0"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Reservation" parent="//@elements.4"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Client" subtopics="//@elements.7 //@elements.8" parent="//@elements.0"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Registered Client" subtopics="//@elements.9" parent="//@elements.6"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Non-registered Client" parent="//@elements.6"/>
+  <elements xsi:type="org.eclipse.dsl.mindmap:Topic" name="Client Card" parent="//@elements.7"/>
+</org.eclipse.dsl.mindmap:Map>
