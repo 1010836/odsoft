@@ -12,11 +12,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="MapElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Topic">
+  <eClassifiers xsi:type="ecore:EClass" name="Topic" eSuperTypes="#//MapElement">
     <eOperations name="allSubTopics" ordered="false" upperBound="-1" eType="#//Topic"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//Priority"
         defaultValueLiteral="LOW"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtopics" upperBound="-1"
+        eType="#//Topic" eOpposite="#//Topic/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Topic"
+        eOpposite="#//Topic/subtopics"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Priority">
     <eLiterals name="HIGH" value="2"/>
@@ -28,7 +32,7 @@
     <eLiterals name="INCLUDE" value="1"/>
     <eLiterals name="EXTEND"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//MapElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Type" defaultValueLiteral="DEPENDENCY"/>
   </eClassifiers>
 </ecore:EPackage>
