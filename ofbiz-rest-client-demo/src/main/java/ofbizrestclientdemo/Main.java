@@ -18,7 +18,7 @@
  * 
  * Author: atb@isep.ipp.pt
  *******************************************************************************/
-package ofbizrestclientdemo;
+package main.java.ofbizrestclientdemo;
 
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -89,9 +89,10 @@ public class Main {
         	JsonObject jsonObj = jsonReader.readObject();
 
         	System.out.println("Get Product:");    
-			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
+			System.out.print("Product ID=" + jsonObj.getString("productId") + 
+					", Internal Name=" + jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
-			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+			else System.out.println(", Product Name=" + jsonObj.getString("productName"));
         }
         else
         {
@@ -126,7 +127,8 @@ public class Main {
         	for (int i=0; i<jsonArray.size(); i=i+1) {
     			JsonObject jsonObj=jsonArray.getJsonObject(i);
     			
-    			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
+    			System.out.print("Product ID=" + jsonObj.getString("productId") + 
+    					", Internal Name=" + jsonObj.getString("internalName"));
     			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
     			else System.out.println(", Product Name="+jsonObj.getString("productName"));
         	}
@@ -183,6 +185,7 @@ public class Main {
        	     .add("productName", "teste1")
        	     .add("productTypeId", "FINISHED_GOOD")
        	     .add("description", "This is a description")
+       	     .add("comments", "You like this product, don't you?")
        	     .build();
 
         Response response = client.target("http://localhost:8080/restcomponent/product").request("application/json")
@@ -196,12 +199,14 @@ public class Main {
         	JsonObject jsonObj = jsonReader.readObject();
 
         	System.out.println("Created Product:");    
-			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
+			System.out.print("Product ID="+jsonObj.getString("productId") + 
+					", Internal Name=" + jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
-			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+			else System.out.println(", Product Name=" + jsonObj.getString("productName"));
 			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
-			else System.out.println(", Description="+jsonObj.getString("description"));
-        	
+			else System.out.println(", Description=" + jsonObj.getString("description"));
+			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
+			else System.out.println(", Comments=" + jsonObj.getString("comments"));        	
         	
         	return jsonObj.getString("productId");
         }
@@ -213,7 +218,7 @@ public class Main {
 	}
 
 	public static void testUpdateProduct(String productId, String newInternalName, String newProductName,
-			String newDescription) {
+			String newDescription, String newProductComment) {
         Client client = ClientBuilder.newClient();
 
     	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
@@ -225,6 +230,7 @@ public class Main {
        	     .add("productName", newProductName)
        	     .add("productTypeId", "FINISHED_GOOD")
        	     .add("description", newDescription)
+       	     .add("comments", newProductComment)
        	     .build();
 
         Response response = client.target("http://localhost:8080/restcomponent/product/"+productId).request("application/json")
@@ -238,9 +244,14 @@ public class Main {
         	JsonObject jsonObj = jsonReader.readObject();
 
         	System.out.println("Updated Product:");    
-			System.out.print("Product ID="+jsonObj.getString("productId")+", Internal Name="+jsonObj.getString("internalName"));
+			System.out.print("Product ID=" + jsonObj.getString("productId") + 
+					", Internal Name=" + jsonObj.getString("internalName"));
 			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
-			else System.out.println(", Product Name="+jsonObj.getString("productName"));
+			else System.out.println(", Product Name=" + jsonObj.getString("productName"));
+			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
+			else System.out.println(", Description=" + jsonObj.getString("description"));
+			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
+			else System.out.println(", Comments=" + jsonObj.getString("comments"));
         }
         else
         {
@@ -266,7 +277,7 @@ public class Main {
 		productId = testCreateProduct();
 		if (productId != null) {
 			testGetProduct(productId);
-			testUpdateProduct(productId, "Update Internal Name Test", "Update Product Name Test", "Update Product Description");
+			testUpdateProduct(productId, "Update Internal Name Test", "Update Product Name Test", "Update Product Description", "Update Product Comments");
 			// Delete the previous product - unavailable operation
 		}
 	}
