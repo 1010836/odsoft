@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
-    <description>HelloWorld Services</description>
-    <vendor></vendor>
-    <version>1.0</version>
 
-    <service name="noSyntaxError" engine="interface">
-        <description>
-            Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
-        </description>
-    </service> 
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+  
+  <description>HelloWorld Services</description>
+  
+  <vendor></vendor>
+  <version>1.0</version>
+
+  <service name="toUppercase" engine="java" location ="org.ofbiz.helloworld.services.MyServices" invoke="toUppercase">
+  
+	  <description>A Service that turns strings to uppercase.</description>
+  
+    <attribute name="msg" type="String" mode="IN" optional="false"/>
+    <attribute name="msgUpper" type="String" mode="OUT" optional="false"/>
+  
+  </service> 
     
 </services>
