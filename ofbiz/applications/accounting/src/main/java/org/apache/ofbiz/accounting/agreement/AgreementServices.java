@@ -74,7 +74,8 @@ public class AgreementServices {
      *              currencyUomId   String  Currency
      *              productId       String  Product Id
      */
-    public static Map<String, Object> getCommissionForProduct(DispatchContext ctx, Map<String, Object> context) {
+    public static Map<String, Object> getCommissionForProduct(DispatchContext ctx, Map<String, Object> context) 
+    {
         Delegator delegator = ctx.getDelegator();
         Locale locale = (Locale) context.get("locale");
         String errMsg = null;
