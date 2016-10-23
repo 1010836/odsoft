@@ -17,4 +17,15 @@
   
   </service> 
     
+  <service name="createRecipe" engine="java" location ="org.ofbiz.helloworld.services.MyServices" invoke="createRecipe">
+  
+    <description>A Service that creates a new recipe.</description>
+  
+    <attribute name="recipeName" type="String" mode="IN" optional="false"/>
+    <attribute name="notes" type="String" mode="IN" optional="false"/>
+    <attribute name="recipeTypeId" type="String" mode="IN" optional="false"/>
+    <attribute name="recipe" type="String" mode="OUT" optional="false"/>
+  
+  </service> 
+
 </services>
