@@ -23,13 +23,19 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-public class OFBizRESTApplication extends Application {
+public class OFBizRESTApplication extends Application 
+{
+
   @Override
-  public Set<Class<?>> getClasses() {
+  public Set<Class<?>> getClasses() 
+  {
       Set<Class<?>> classes = new HashSet<Class<?>>();
+      
       classes.add(PingResource.class);
       classes.add(ProductResource.class);
       classes.add(RecipeResource.class);
+      
       return classes;
   }
+  
 }

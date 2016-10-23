@@ -94,45 +94,56 @@ public class ProductResource {
 	 */
 	@GET
 	@Produces("application/json")
-	public Response getAllProducts() {
-		String username = null;
+	public Response getAllProducts() 
+	{
+	
+	  String username = null;
 		String password = null;
 
-		try {
+		try 
+		{
 			username = httpRequest.getHeader("login.username");
 			password = httpRequest.getHeader("login.password");
-		} catch (NullPointerException e) {
-			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
-					.build();
+		} 
+		catch (NullPointerException e) 
+		{
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password").build();
 		}
 
-		if (username == null || password == null) {
-			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
-					.build();
+		if (username == null || password == null) 
+		{
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password").build();
 		}
 
 		GenericDelegator delegator = (GenericDelegator) DelegatorFactory.getDelegator("default");
 		List<GenericValue> products = null;
 
-		try {
-			products = delegator.findAll("Product", false);
-		} catch (GenericEntityException e) {
+		try 
+		{
+		  products = delegator.findAll("Product", false);
+		} 
+		catch (GenericEntityException e) 
+		{
 			return Response.serverError().entity(e.toString()).build();
 		}
 
-		if (products != null) {
+		if (products != null) 
+		{
 
 			String response = Util.convertListGenericValueToJSON(products);
 
-			if (response == null) {
+			if (response == null) 
+			{
 				return Response.serverError().entity("Erro na conversao do JSON!").build();
 			}
 
 			return Response.ok(response).type("application/json").build();
+			
 		}
 
 		// shouldn't ever get here ... should we?
 		throw new RuntimeException("Invalid ");
+		
 	}
 
 	/**
@@ -142,27 +153,34 @@ public class ProductResource {
 	 */
 	@POST
 	@Produces("application/json")
-	public Response createProduct() {
-		String username = null;
+	public Response createProduct() 
+	{
+	
+	  String username = null;
 		String password = null;
 
-		try {
+		try 
+		{
 			username = httpRequest.getHeader("login.username");
 			password = httpRequest.getHeader("login.password");
-		} catch (NullPointerException e) {
-			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
-					.build();
+		} 
+		catch (NullPointerException e) 
+		{
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password").build();
 		}
 
-		if (username == null || password == null) {
-			return Response.serverError().entity("Problem reading http header(s): login.username or login.password")
-					.build();
+		if (username == null || password == null) 
+		{
+			return Response.serverError().entity("Problem reading http header(s): login.username or login.password").build();
 		}
 
 		JsonReader jsonReader;
-		try {
+		try 
+		{
 			jsonReader = Json.createReader(httpRequest.getReader());
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			return Response.serverError().entity("Problem reading json body").build();
 		}
 
@@ -172,29 +190,40 @@ public class ProductResource {
 		GenericDelegator delegator = (GenericDelegator) DelegatorFactory.getDelegator("default");
 		LocalDispatcher dispatcher = org.apache.ofbiz.service.ServiceDispatcher.getLocalDispatcher("default", delegator);
 		
-		Map<String, String> paramMap = UtilMisc.toMap("internalName", jsonObj.getString("internalName"), 
-				"productName",jsonObj.getString("productName"), 
-				"productTypeId", jsonObj.getString("productTypeId"), 
-				"description", jsonObj.getString("description"), 
-				"comments", jsonObj.getString("comments"),
-				"login.username", username, 
-				"login.password", password);
+		Map<String, String> paramMap = UtilMisc.toMap(
+		                                              "internalName", jsonObj.getString("internalName"), 
+				                                          "productName", jsonObj.getString("productName"), 
+				                                          "productTypeId", jsonObj.getString("productTypeId"), 
+				                                          "description", jsonObj.getString("description"), 
+				                                          "comments", jsonObj.getString("comments"),
+				                                          "login.username", username, 
+				                                          "login.password", password
+				                                         );
 
 		Map<String, Object> result = FastMap.newInstance();
-		try {
+		
+		try 
+		{
 			result = dispatcher.runSync("createProduct", paramMap);
-		} catch (GenericServiceException e1) {
+		} 
+		catch (GenericServiceException e1) 
+		{
 			Debug.logError(e1, PingResource.class.getName());
 			return Response.serverError().entity(e1.toString()).build();
 		}
 
 		String productId = result.get("productId").toString(); 
 		String product = Util.getProduct(productId);
-		if (product != null) {
+		
+		if (product != null) 
+		{
 			return Response.ok(product).type("application/json").build();
-		} else {
+		} 
+		else 
+		{
 			return Response.serverError().entity("Problem reading the new product after created!").build();
 		}
+		
 	}
 
 	// ../url_resource/{id}

@@ -24,8 +24,21 @@
     <attribute name="recipeName" type="String" mode="IN" optional="false"/>
     <attribute name="notes" type="String" mode="IN" optional="false"/>
     <attribute name="recipeTypeId" type="String" mode="IN" optional="false"/>
-    <attribute name="recipe" type="String" mode="OUT" optional="false"/>
+    <attribute name="recipeId" type="String" mode="OUT" optional="false"/>
   
   </service> 
+  
+  <service name="updateRecipe" engine="java" location ="org.ofbiz.helloworld.services.MyServices" invoke="updateRecipe">
+  
+    <description> A Service that update recipes.</description> 
+      
+    <attribute name="recipeName" type="String" mode="IN" optional="false"/>
+    <attribute name="notes" type="String" mode="IN" optional="false"/>
+    <attribute name="recipeTypeId" type="String" mode="IN" optional="false"/>
+    <attribute name="recipeId" type="String" mode="IN" optional="false"/>
+  
+  </service> 
+
+  
 
 </services>
