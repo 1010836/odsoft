@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.dsl.Diagram:RequirentGroup xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.dsl.Diagram="http://org/eclipse/dsl/diagram" name="Restaurant">
+  <children name="LunchService" id="LunchService">
+    <children name="Order" description="" id="Order">
+      <requirements title="OrderMealTitle" author="Figueiredo" id="OrderMeal">
+        <children title="ThePerformanceTitle" description="An order has to be done in less than 3 minutes when composed by 3 items with choices done in 10 seconds" type="NONFUNCTIONAL" author="Figueiredo" id="ThePerformance">
+          <version major="1" minor="2" service="3"/>
+        </children>
+      </requirements>
+      <requirements title="ListOrdersTitle" description="" author="Figueiredo" id="ListOrders"/>
+    </children>
+  </children>
+  <children name="Client" id="Client">
+    <requirements title="AddClientTitle" id="AddClient"/>
+  </children>
+</org.eclipse.dsl.Diagram:RequirentGroup>
