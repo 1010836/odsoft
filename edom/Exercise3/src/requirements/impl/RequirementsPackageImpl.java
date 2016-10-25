@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import requirements.Comment;
 import requirements.Model;
+import requirements.Person;
 import requirements.Priority;
 import requirements.Requirement;
 import requirements.RequirementsFactory;
@@ -19,6 +20,7 @@ import requirements.RequirementsPackage;
 import requirements.RequirentGroup;
 import requirements.Resolution;
 import requirements.State;
+import requirements.Team;
 import requirements.Type;
 import requirements.Version;
 
@@ -63,6 +65,20 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	private EClass commentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass personEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass teamEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,6 +201,24 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getModel_Team() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModel_Person() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRequirentGroup() {
 		return requirentGroupEClass;
 	}
@@ -293,7 +327,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequirement_Author() {
+	public EAttribute getRequirement_Created() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -302,7 +336,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequirement_Created() {
+	public EAttribute getRequirement_Id() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -311,7 +345,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequirement_Id() {
+	public EAttribute getRequirement_State() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -320,7 +354,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequirement_State() {
+	public EAttribute getRequirement_Resolution() {
 		return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -329,17 +363,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRequirement_Resolution() {
-		return (EAttribute)requirementEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRequirement_Version() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(9);
+		return (EReference)requirementEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -348,7 +373,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	public EReference getRequirement_Comments() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(10);
+		return (EReference)requirementEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -357,7 +382,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	public EReference getRequirement_Dependencies() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(11);
+		return (EReference)requirementEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -366,7 +391,7 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	public EReference getRequirement_Children() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(12);
+		return (EReference)requirementEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -375,7 +400,25 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	public EReference getRequirement_Parent() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirement_Team() {
 		return (EReference)requirementEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirement_Person() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -473,6 +516,69 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPerson() {
+		return personEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPerson_Id() {
+		return (EAttribute)personEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPerson_Name() {
+		return (EAttribute)personEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTeam() {
+		return teamEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTeam_Id() {
+		return (EAttribute)teamEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTeam_Name() {
+		return (EAttribute)teamEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTeam_Person() {
+		return (EReference)teamEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getType() {
 		return typeEEnum;
 	}
@@ -535,6 +641,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		modelEClass = createEClass(MODEL);
 		createEAttribute(modelEClass, MODEL__TITLE);
 		createEReference(modelEClass, MODEL__GROUPS);
+		createEReference(modelEClass, MODEL__TEAM);
+		createEReference(modelEClass, MODEL__PERSON);
 
 		requirentGroupEClass = createEClass(REQUIRENT_GROUP);
 		createEAttribute(requirentGroupEClass, REQUIRENT_GROUP__NAME);
@@ -549,7 +657,6 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		createEAttribute(requirementEClass, REQUIREMENT__DESCRIPTION);
 		createEAttribute(requirementEClass, REQUIREMENT__TYPE);
 		createEAttribute(requirementEClass, REQUIREMENT__PRIORITY);
-		createEAttribute(requirementEClass, REQUIREMENT__AUTHOR);
 		createEAttribute(requirementEClass, REQUIREMENT__CREATED);
 		createEAttribute(requirementEClass, REQUIREMENT__ID);
 		createEAttribute(requirementEClass, REQUIREMENT__STATE);
@@ -559,6 +666,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		createEReference(requirementEClass, REQUIREMENT__DEPENDENCIES);
 		createEReference(requirementEClass, REQUIREMENT__CHILDREN);
 		createEReference(requirementEClass, REQUIREMENT__PARENT);
+		createEReference(requirementEClass, REQUIREMENT__TEAM);
+		createEReference(requirementEClass, REQUIREMENT__PERSON);
 
 		versionEClass = createEClass(VERSION);
 		createEAttribute(versionEClass, VERSION__MAJOR);
@@ -571,6 +680,15 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		createEAttribute(commentEClass, COMMENT__AUTHOR);
 		createEAttribute(commentEClass, COMMENT__CREATED);
 		createEReference(commentEClass, COMMENT__CHILDREN);
+
+		personEClass = createEClass(PERSON);
+		createEAttribute(personEClass, PERSON__ID);
+		createEAttribute(personEClass, PERSON__NAME);
+
+		teamEClass = createEClass(TEAM);
+		createEAttribute(teamEClass, TEAM__ID);
+		createEAttribute(teamEClass, TEAM__NAME);
+		createEReference(teamEClass, TEAM__PERSON);
 
 		// Create enums
 		typeEEnum = createEEnum(TYPE);
@@ -612,6 +730,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModel_Title(), ecorePackage.getEString(), "title", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Groups(), this.getRequirentGroup(), null, "groups", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Team(), this.getTeam(), null, "team", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Person(), this.getPerson(), null, "person", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirentGroupEClass, RequirentGroup.class, "RequirentGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequirentGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, RequirentGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -626,7 +746,6 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEAttribute(getRequirement_Description(), ecorePackage.getEString(), "description", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Type(), this.getType(), "type", "FUNCTIONAL", 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Priority(), this.getPriority(), "priority", "HIGH", 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRequirement_Author(), ecorePackage.getEString(), "author", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Created(), ecorePackage.getEDate(), "created", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Id(), ecorePackage.getEString(), "id", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_State(), this.getState(), "state", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -636,6 +755,8 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEReference(getRequirement_Dependencies(), this.getRequirement(), null, "dependencies", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_Children(), this.getRequirement(), this.getRequirement_Parent(), "children", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequirement_Parent(), this.getRequirement(), this.getRequirement_Children(), "parent", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Team(), this.getTeam(), null, "team", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequirement_Person(), this.getPerson(), null, "person", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionEClass, Version.class, "Version", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVersion_Major(), ecorePackage.getEInt(), "major", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -648,6 +769,15 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEAttribute(getComment_Author(), ecorePackage.getEString(), "author", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComment_Created(), ecorePackage.getEDate(), "created", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComment_Children(), this.getComment(), null, "children", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPerson_Id(), ecorePackage.getEString(), "id", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(teamEClass, Team.class, "Team", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTeam_Id(), ecorePackage.getEString(), "id", null, 0, 1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTeam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTeam_Person(), this.getPerson(), null, "person", null, 2, -1, Team.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(typeEEnum, Type.class, "Type");

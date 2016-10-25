@@ -86,13 +86,31 @@ public interface RequirementsPackage extends EPackage {
 	int MODEL__GROUPS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Team</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__TEAM = 2;
+
+	/**
+	 * The feature id for the '<em><b>Person</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__PERSON = 3;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 2;
+	int MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -232,22 +250,13 @@ public interface RequirementsPackage extends EPackage {
 	int REQUIREMENT__PRIORITY = 3;
 
 	/**
-	 * The feature id for the '<em><b>Author</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIREMENT__AUTHOR = 4;
-
-	/**
 	 * The feature id for the '<em><b>Created</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__CREATED = 5;
+	int REQUIREMENT__CREATED = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -256,7 +265,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__ID = 6;
+	int REQUIREMENT__ID = 5;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -265,7 +274,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__STATE = 7;
+	int REQUIREMENT__STATE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Resolution</b></em>' attribute.
@@ -274,7 +283,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__RESOLUTION = 8;
+	int REQUIREMENT__RESOLUTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' containment reference.
@@ -283,7 +292,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__VERSION = 9;
+	int REQUIREMENT__VERSION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -292,7 +301,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__COMMENTS = 10;
+	int REQUIREMENT__COMMENTS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Dependencies</b></em>' reference list.
@@ -301,7 +310,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__DEPENDENCIES = 11;
+	int REQUIREMENT__DEPENDENCIES = 10;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -310,7 +319,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__CHILDREN = 12;
+	int REQUIREMENT__CHILDREN = 11;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -319,7 +328,25 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT__PARENT = 13;
+	int REQUIREMENT__PARENT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Team</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__TEAM = 13;
+
+	/**
+	 * The feature id for the '<em><b>Person</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__PERSON = 14;
 
 	/**
 	 * The number of structural features of the '<em>Requirement</em>' class.
@@ -328,7 +355,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIREMENT_FEATURE_COUNT = 14;
+	int REQUIREMENT_FEATURE_COUNT = 15;
 
 	/**
 	 * The number of operations of the '<em>Requirement</em>' class.
@@ -468,6 +495,107 @@ public interface RequirementsPackage extends EPackage {
 	int COMMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link requirements.impl.PersonImpl <em>Person</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see requirements.impl.PersonImpl
+	 * @see requirements.impl.RequirementsPackageImpl#getPerson()
+	 * @generated
+	 */
+	int PERSON = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Person</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Person</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link requirements.impl.TeamImpl <em>Team</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see requirements.impl.TeamImpl
+	 * @see requirements.impl.RequirementsPackageImpl#getTeam()
+	 * @generated
+	 */
+	int TEAM = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Person</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM__PERSON = 2;
+
+	/**
+	 * The number of structural features of the '<em>Team</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Team</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link requirements.Type <em>Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -475,7 +603,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @see requirements.impl.RequirementsPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 5;
+	int TYPE = 7;
 
 	/**
 	 * The meta object id for the '{@link requirements.Priority <em>Priority</em>}' enum.
@@ -485,7 +613,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @see requirements.impl.RequirementsPackageImpl#getPriority()
 	 * @generated
 	 */
-	int PRIORITY = 6;
+	int PRIORITY = 8;
 
 	/**
 	 * The meta object id for the '{@link requirements.State <em>State</em>}' enum.
@@ -495,7 +623,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @see requirements.impl.RequirementsPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 7;
+	int STATE = 9;
 
 	/**
 	 * The meta object id for the '{@link requirements.Resolution <em>Resolution</em>}' enum.
@@ -505,7 +633,7 @@ public interface RequirementsPackage extends EPackage {
 	 * @see requirements.impl.RequirementsPackageImpl#getResolution()
 	 * @generated
 	 */
-	int RESOLUTION = 8;
+	int RESOLUTION = 10;
 
 
 	/**
@@ -539,6 +667,28 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModel_Groups();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link requirements.Model#getTeam <em>Team</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Team</em>'.
+	 * @see requirements.Model#getTeam()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Team();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link requirements.Model#getPerson <em>Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Person</em>'.
+	 * @see requirements.Model#getPerson()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Person();
 
 	/**
 	 * Returns the meta object for class '{@link requirements.RequirentGroup <em>Requirent Group</em>}'.
@@ -671,17 +821,6 @@ public interface RequirementsPackage extends EPackage {
 	EAttribute getRequirement_Priority();
 
 	/**
-	 * Returns the meta object for the attribute '{@link requirements.Requirement#getAuthor <em>Author</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Author</em>'.
-	 * @see requirements.Requirement#getAuthor()
-	 * @see #getRequirement()
-	 * @generated
-	 */
-	EAttribute getRequirement_Author();
-
-	/**
 	 * Returns the meta object for the attribute '{@link requirements.Requirement#getCreated <em>Created</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -779,6 +918,28 @@ public interface RequirementsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRequirement_Parent();
+
+	/**
+	 * Returns the meta object for the reference '{@link requirements.Requirement#getTeam <em>Team</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Team</em>'.
+	 * @see requirements.Requirement#getTeam()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_Team();
+
+	/**
+	 * Returns the meta object for the reference '{@link requirements.Requirement#getPerson <em>Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Person</em>'.
+	 * @see requirements.Requirement#getPerson()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_Person();
 
 	/**
 	 * Returns the meta object for class '{@link requirements.Version <em>Version</em>}'.
@@ -889,6 +1050,81 @@ public interface RequirementsPackage extends EPackage {
 	EReference getComment_Children();
 
 	/**
+	 * Returns the meta object for class '{@link requirements.Person <em>Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Person</em>'.
+	 * @see requirements.Person
+	 * @generated
+	 */
+	EClass getPerson();
+
+	/**
+	 * Returns the meta object for the attribute '{@link requirements.Person#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see requirements.Person#getId()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EAttribute getPerson_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link requirements.Person#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see requirements.Person#getName()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EAttribute getPerson_Name();
+
+	/**
+	 * Returns the meta object for class '{@link requirements.Team <em>Team</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Team</em>'.
+	 * @see requirements.Team
+	 * @generated
+	 */
+	EClass getTeam();
+
+	/**
+	 * Returns the meta object for the attribute '{@link requirements.Team#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see requirements.Team#getId()
+	 * @see #getTeam()
+	 * @generated
+	 */
+	EAttribute getTeam_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link requirements.Team#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see requirements.Team#getName()
+	 * @see #getTeam()
+	 * @generated
+	 */
+	EAttribute getTeam_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link requirements.Team#getPerson <em>Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Person</em>'.
+	 * @see requirements.Team#getPerson()
+	 * @see #getTeam()
+	 * @generated
+	 */
+	EReference getTeam_Person();
+
+	/**
 	 * Returns the meta object for enum '{@link requirements.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -976,6 +1212,22 @@ public interface RequirementsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL__GROUPS = eINSTANCE.getModel_Groups();
+
+		/**
+		 * The meta object literal for the '<em><b>Team</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__TEAM = eINSTANCE.getModel_Team();
+
+		/**
+		 * The meta object literal for the '<em><b>Person</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__PERSON = eINSTANCE.getModel_Person();
 
 		/**
 		 * The meta object literal for the '{@link requirements.impl.RequirentGroupImpl <em>Requirent Group</em>}' class.
@@ -1078,14 +1330,6 @@ public interface RequirementsPackage extends EPackage {
 		EAttribute REQUIREMENT__PRIORITY = eINSTANCE.getRequirement_Priority();
 
 		/**
-		 * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REQUIREMENT__AUTHOR = eINSTANCE.getRequirement_Author();
-
-		/**
 		 * The meta object literal for the '<em><b>Created</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1156,6 +1400,22 @@ public interface RequirementsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REQUIREMENT__PARENT = eINSTANCE.getRequirement_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Team</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT__TEAM = eINSTANCE.getRequirement_Team();
+
+		/**
+		 * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT__PERSON = eINSTANCE.getRequirement_Person();
 
 		/**
 		 * The meta object literal for the '{@link requirements.impl.VersionImpl <em>Version</em>}' class.
@@ -1240,6 +1500,66 @@ public interface RequirementsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMENT__CHILDREN = eINSTANCE.getComment_Children();
+
+		/**
+		 * The meta object literal for the '{@link requirements.impl.PersonImpl <em>Person</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see requirements.impl.PersonImpl
+		 * @see requirements.impl.RequirementsPackageImpl#getPerson()
+		 * @generated
+		 */
+		EClass PERSON = eINSTANCE.getPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__ID = eINSTANCE.getPerson_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
+
+		/**
+		 * The meta object literal for the '{@link requirements.impl.TeamImpl <em>Team</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see requirements.impl.TeamImpl
+		 * @see requirements.impl.RequirementsPackageImpl#getTeam()
+		 * @generated
+		 */
+		EClass TEAM = eINSTANCE.getTeam();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEAM__ID = eINSTANCE.getTeam_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEAM__NAME = eINSTANCE.getTeam_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Person</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEAM__PERSON = eINSTANCE.getTeam_Person();
 
 		/**
 		 * The meta object literal for the '{@link requirements.Type <em>Type</em>}' enum.

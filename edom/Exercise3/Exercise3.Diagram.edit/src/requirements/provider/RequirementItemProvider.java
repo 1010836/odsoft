@@ -67,12 +67,13 @@ public class RequirementItemProvider
 			addDescriptionPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addPriorityPropertyDescriptor(object);
-			addAuthorPropertyDescriptor(object);
 			addCreatedPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
 			addResolutionPropertyDescriptor(object);
 			addDependenciesPropertyDescriptor(object);
+			addTeamPropertyDescriptor(object);
+			addPersonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,28 +158,6 @@ public class RequirementItemProvider
 				 getString("_UI_Requirement_priority_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_priority_feature", "_UI_Requirement_type"),
 				 RequirementsPackage.Literals.REQUIREMENT__PRIORITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Author feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Requirement_author_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_author_feature", "_UI_Requirement_type"),
-				 RequirementsPackage.Literals.REQUIREMENT__AUTHOR,
 				 true,
 				 false,
 				 false,
@@ -298,6 +277,50 @@ public class RequirementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Team feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTeamPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Requirement_team_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_team_feature", "_UI_Requirement_type"),
+				 RequirementsPackage.Literals.REQUIREMENT__TEAM,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Person feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Requirement_person_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Requirement_person_feature", "_UI_Requirement_type"),
+				 RequirementsPackage.Literals.REQUIREMENT__PERSON,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -378,7 +401,6 @@ public class RequirementItemProvider
 			
 						
 	}	
-
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -395,7 +417,6 @@ public class RequirementItemProvider
 			case RequirementsPackage.REQUIREMENT__DESCRIPTION:
 			case RequirementsPackage.REQUIREMENT__TYPE:
 			case RequirementsPackage.REQUIREMENT__PRIORITY:
-			case RequirementsPackage.REQUIREMENT__AUTHOR:
 			case RequirementsPackage.REQUIREMENT__CREATED:
 			case RequirementsPackage.REQUIREMENT__ID:
 			case RequirementsPackage.REQUIREMENT__STATE:

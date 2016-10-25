@@ -23,11 +23,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import requirements.Comment;
+import requirements.Person;
 import requirements.Priority;
 import requirements.Requirement;
 import requirements.RequirementsPackage;
 import requirements.Resolution;
 import requirements.State;
+import requirements.Team;
 import requirements.Type;
 import requirements.Version;
 
@@ -43,7 +45,6 @@ import requirements.Version;
  *   <li>{@link requirements.impl.RequirementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getType <em>Type</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link requirements.impl.RequirementImpl#getAuthor <em>Author</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getCreated <em>Created</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getId <em>Id</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getState <em>State</em>}</li>
@@ -53,6 +54,8 @@ import requirements.Version;
  *   <li>{@link requirements.impl.RequirementImpl#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link requirements.impl.RequirementImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link requirements.impl.RequirementImpl#getTeam <em>Team</em>}</li>
+ *   <li>{@link requirements.impl.RequirementImpl#getPerson <em>Person</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,26 +140,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	 * @ordered
 	 */
 	protected Priority priority = PRIORITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAuthor() <em>Author</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String AUTHOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthor()
-	 * @generated
-	 * @ordered
-	 */
-	protected String author = AUTHOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCreated() <em>Created</em>}' attribute.
@@ -279,6 +262,26 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	protected EList<Requirement> children;
 
 	/**
+	 * The cached value of the '{@link #getTeam() <em>Team</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeam()
+	 * @generated
+	 * @ordered
+	 */
+	protected Team team;
+
+	/**
+	 * The cached value of the '{@link #getPerson() <em>Person</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPerson()
+	 * @generated
+	 * @ordered
+	 */
+	protected Person person;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -379,27 +382,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		priority = newPriority == null ? PRIORITY_EDEFAULT : newPriority;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__PRIORITY, oldPriority, priority));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getAuthor() {
-		return author;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthor(String newAuthor) {
-		String oldAuthor = author;
-		author = newAuthor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__AUTHOR, oldAuthor, author));
 	}
 
 	/**
@@ -611,6 +593,82 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Team getTeam() {
+		if (team != null && team.eIsProxy()) {
+			InternalEObject oldTeam = (InternalEObject)team;
+			team = (Team)eResolveProxy(oldTeam);
+			if (team != oldTeam) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__TEAM, oldTeam, team));
+			}
+		}
+		return team;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Team basicGetTeam() {
+		return team;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTeam(Team newTeam) {
+		Team oldTeam = team;
+		team = newTeam;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__TEAM, oldTeam, team));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Person getPerson() {
+		if (person != null && person.eIsProxy()) {
+			InternalEObject oldPerson = (InternalEObject)person;
+			person = (Person)eResolveProxy(oldPerson);
+			if (person != oldPerson) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__PERSON, oldPerson, person));
+			}
+		}
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Person basicGetPerson() {
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPerson(Person newPerson) {
+		Person oldPerson = person;
+		person = newPerson;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__PERSON, oldPerson, person));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -675,8 +733,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return getType();
 			case RequirementsPackage.REQUIREMENT__PRIORITY:
 				return getPriority();
-			case RequirementsPackage.REQUIREMENT__AUTHOR:
-				return getAuthor();
 			case RequirementsPackage.REQUIREMENT__CREATED:
 				return getCreated();
 			case RequirementsPackage.REQUIREMENT__ID:
@@ -695,6 +751,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return getChildren();
 			case RequirementsPackage.REQUIREMENT__PARENT:
 				return getParent();
+			case RequirementsPackage.REQUIREMENT__TEAM:
+				if (resolve) return getTeam();
+				return basicGetTeam();
+			case RequirementsPackage.REQUIREMENT__PERSON:
+				if (resolve) return getPerson();
+				return basicGetPerson();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -719,9 +781,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return;
 			case RequirementsPackage.REQUIREMENT__PRIORITY:
 				setPriority((Priority)newValue);
-				return;
-			case RequirementsPackage.REQUIREMENT__AUTHOR:
-				setAuthor((String)newValue);
 				return;
 			case RequirementsPackage.REQUIREMENT__CREATED:
 				setCreated((Date)newValue);
@@ -753,6 +812,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 			case RequirementsPackage.REQUIREMENT__PARENT:
 				setParent((Requirement)newValue);
 				return;
+			case RequirementsPackage.REQUIREMENT__TEAM:
+				setTeam((Team)newValue);
+				return;
+			case RequirementsPackage.REQUIREMENT__PERSON:
+				setPerson((Person)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -776,9 +841,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return;
 			case RequirementsPackage.REQUIREMENT__PRIORITY:
 				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case RequirementsPackage.REQUIREMENT__AUTHOR:
-				setAuthor(AUTHOR_EDEFAULT);
 				return;
 			case RequirementsPackage.REQUIREMENT__CREATED:
 				setCreated(CREATED_EDEFAULT);
@@ -807,6 +869,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 			case RequirementsPackage.REQUIREMENT__PARENT:
 				setParent((Requirement)null);
 				return;
+			case RequirementsPackage.REQUIREMENT__TEAM:
+				setTeam((Team)null);
+				return;
+			case RequirementsPackage.REQUIREMENT__PERSON:
+				setPerson((Person)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -827,8 +895,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return type != TYPE_EDEFAULT;
 			case RequirementsPackage.REQUIREMENT__PRIORITY:
 				return priority != PRIORITY_EDEFAULT;
-			case RequirementsPackage.REQUIREMENT__AUTHOR:
-				return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
 			case RequirementsPackage.REQUIREMENT__CREATED:
 				return CREATED_EDEFAULT == null ? created != null : !CREATED_EDEFAULT.equals(created);
 			case RequirementsPackage.REQUIREMENT__ID:
@@ -847,6 +913,10 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 				return children != null && !children.isEmpty();
 			case RequirementsPackage.REQUIREMENT__PARENT:
 				return getParent() != null;
+			case RequirementsPackage.REQUIREMENT__TEAM:
+				return team != null;
+			case RequirementsPackage.REQUIREMENT__PERSON:
+				return person != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -869,8 +939,6 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		result.append(type);
 		result.append(", priority: ");
 		result.append(priority);
-		result.append(", author: ");
-		result.append(author);
 		result.append(", created: ");
 		result.append(created);
 		result.append(", id: ");

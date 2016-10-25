@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link requirements.Requirement#getDescription <em>Description</em>}</li>
  *   <li>{@link requirements.Requirement#getType <em>Type</em>}</li>
  *   <li>{@link requirements.Requirement#getPriority <em>Priority</em>}</li>
- *   <li>{@link requirements.Requirement#getAuthor <em>Author</em>}</li>
  *   <li>{@link requirements.Requirement#getCreated <em>Created</em>}</li>
  *   <li>{@link requirements.Requirement#getId <em>Id</em>}</li>
  *   <li>{@link requirements.Requirement#getState <em>State</em>}</li>
@@ -31,6 +30,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link requirements.Requirement#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link requirements.Requirement#getChildren <em>Children</em>}</li>
  *   <li>{@link requirements.Requirement#getParent <em>Parent</em>}</li>
+ *   <li>{@link requirements.Requirement#getTeam <em>Team</em>}</li>
+ *   <li>{@link requirements.Requirement#getPerson <em>Person</em>}</li>
  * </ul>
  *
  * @see requirements.RequirementsPackage#getRequirement()
@@ -149,32 +150,6 @@ public interface Requirement extends EObject {
 	 * @generated
 	 */
 	void setPriority(Priority value);
-
-	/**
-	 * Returns the value of the '<em><b>Author</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Author</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Author</em>' attribute.
-	 * @see #setAuthor(String)
-	 * @see requirements.RequirementsPackage#getRequirement_Author()
-	 * @model
-	 * @generated
-	 */
-	String getAuthor();
-
-	/**
-	 * Sets the value of the '{@link requirements.Requirement#getAuthor <em>Author</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Author</em>' attribute.
-	 * @see #getAuthor()
-	 * @generated
-	 */
-	void setAuthor(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Created</b></em>' attribute.
@@ -389,5 +364,57 @@ public interface Requirement extends EObject {
 	 * @generated
 	 */
 	void setParent(Requirement value);
+
+	/**
+	 * Returns the value of the '<em><b>Team</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Team</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Team</em>' reference.
+	 * @see #setTeam(Team)
+	 * @see requirements.RequirementsPackage#getRequirement_Team()
+	 * @model
+	 * @generated
+	 */
+	Team getTeam();
+
+	/**
+	 * Sets the value of the '{@link requirements.Requirement#getTeam <em>Team</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Team</em>' reference.
+	 * @see #getTeam()
+	 * @generated
+	 */
+	void setTeam(Team value);
+
+	/**
+	 * Returns the value of the '<em><b>Person</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Person</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Person</em>' reference.
+	 * @see #setPerson(Person)
+	 * @see requirements.RequirementsPackage#getRequirement_Person()
+	 * @model
+	 * @generated
+	 */
+	Person getPerson();
+
+	/**
+	 * Sets the value of the '{@link requirements.Requirement#getPerson <em>Person</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Person</em>' reference.
+	 * @see #getPerson()
+	 * @generated
+	 */
+	void setPerson(Person value);
 
 } // Requirement

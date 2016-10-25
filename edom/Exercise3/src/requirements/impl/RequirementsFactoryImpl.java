@@ -62,6 +62,8 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 			case RequirementsPackage.REQUIREMENT: return createRequirement();
 			case RequirementsPackage.VERSION: return createVersion();
 			case RequirementsPackage.COMMENT: return createComment();
+			case RequirementsPackage.PERSON: return createPerson();
+			case RequirementsPackage.TEAM: return createTeam();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -157,6 +159,26 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Person createPerson() {
+		PersonImpl person = new PersonImpl();
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Team createTeam() {
+		TeamImpl team = new TeamImpl();
+		return team;
 	}
 
 	/**

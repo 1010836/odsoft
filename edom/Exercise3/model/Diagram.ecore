@@ -5,6 +5,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//RequirentGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" upperBound="-1" eType="#//Team"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" upperBound="-1"
+        eType="#//Person" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequirentGroup">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,7 +27,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type" defaultValueLiteral="FUNCTIONAL"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//Priority"
         defaultValueLiteral="HIGH"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//State"/>
@@ -38,6 +41,8 @@
         eType="#//Requirement" containment="true" eOpposite="#//Requirement/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Requirement"
         eOpposite="#//Requirement/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//Person"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Version">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="major" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -72,5 +77,15 @@
     <eLiterals name="ACCEPTED" value="1"/>
     <eLiterals name="IMPLEMENTED" value="2"/>
     <eLiterals name="LATER" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Team">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" lowerBound="2"
+        upperBound="-1" eType="#//Person"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -19,8 +19,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import requirements.Model;
+import requirements.Person;
 import requirements.RequirementsPackage;
 import requirements.RequirentGroup;
+import requirements.Team;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +34,8 @@ import requirements.RequirentGroup;
  * <ul>
  *   <li>{@link requirements.impl.ModelImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link requirements.impl.ModelImpl#getGroups <em>Groups</em>}</li>
+ *   <li>{@link requirements.impl.ModelImpl#getTeam <em>Team</em>}</li>
+ *   <li>{@link requirements.impl.ModelImpl#getPerson <em>Person</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +70,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<RequirentGroup> groups;
+
+	/**
+	 * The cached value of the '{@link #getTeam() <em>Team</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTeam()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Team> team;
+
+	/**
+	 * The cached value of the '{@link #getPerson() <em>Person</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPerson()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Person> person;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +148,39 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Team> getTeam() {
+		if (team == null) {
+			team = new EObjectContainmentEList<Team>(Team.class, this, RequirementsPackage.MODEL__TEAM);
+		}
+		return team;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Person> getPerson() {
+		if (person == null) {
+			person = new EObjectContainmentEList<Person>(Person.class, this, RequirementsPackage.MODEL__PERSON);
+		}
+		return person;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RequirementsPackage.MODEL__GROUPS:
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+			case RequirementsPackage.MODEL__TEAM:
+				return ((InternalEList<?>)getTeam()).basicRemove(otherEnd, msgs);
+			case RequirementsPackage.MODEL__PERSON:
+				return ((InternalEList<?>)getPerson()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +197,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return getTitle();
 			case RequirementsPackage.MODEL__GROUPS:
 				return getGroups();
+			case RequirementsPackage.MODEL__TEAM:
+				return getTeam();
+			case RequirementsPackage.MODEL__PERSON:
+				return getPerson();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +221,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				getGroups().clear();
 				getGroups().addAll((Collection<? extends RequirentGroup>)newValue);
 				return;
+			case RequirementsPackage.MODEL__TEAM:
+				getTeam().clear();
+				getTeam().addAll((Collection<? extends Team>)newValue);
+				return;
+			case RequirementsPackage.MODEL__PERSON:
+				getPerson().clear();
+				getPerson().addAll((Collection<? extends Person>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +247,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			case RequirementsPackage.MODEL__GROUPS:
 				getGroups().clear();
 				return;
+			case RequirementsPackage.MODEL__TEAM:
+				getTeam().clear();
+				return;
+			case RequirementsPackage.MODEL__PERSON:
+				getPerson().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +269,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case RequirementsPackage.MODEL__GROUPS:
 				return groups != null && !groups.isEmpty();
+			case RequirementsPackage.MODEL__TEAM:
+				return team != null && !team.isEmpty();
+			case RequirementsPackage.MODEL__PERSON:
+				return person != null && !person.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

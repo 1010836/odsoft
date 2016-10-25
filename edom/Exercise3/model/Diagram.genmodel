@@ -30,6 +30,8 @@
     <genClasses ecoreClass="Diagram.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Model/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagram.ecore#//Model/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagram.ecore#//Model/team"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagram.ecore#//Model/person"/>
     </genClasses>
     <genClasses ecoreClass="Diagram.ecore#//RequirentGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//RequirentGroup/name"/>
@@ -44,7 +46,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/priority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/author"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/created"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Requirement/state"/>
@@ -54,6 +55,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Diagram.ecore#//Requirement/dependencies"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagram.ecore#//Requirement/children"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Diagram.ecore#//Requirement/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Diagram.ecore#//Requirement/team"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Diagram.ecore#//Requirement/person"/>
     </genClasses>
     <genClasses ecoreClass="Diagram.ecore#//Version">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Version/major"/>
@@ -66,6 +69,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Comment/author"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Comment/created"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Diagram.ecore#//Comment/children"/>
+    </genClasses>
+    <genClasses ecoreClass="Diagram.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Person/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Person/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Diagram.ecore#//Team">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Team/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Diagram.ecore#//Team/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Diagram.ecore#//Team/person"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

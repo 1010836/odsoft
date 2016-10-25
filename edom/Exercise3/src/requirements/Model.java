@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link requirements.Model#getTitle <em>Title</em>}</li>
  *   <li>{@link requirements.Model#getGroups <em>Groups</em>}</li>
+ *   <li>{@link requirements.Model#getTeam <em>Team</em>}</li>
+ *   <li>{@link requirements.Model#getPerson <em>Person</em>}</li>
  * </ul>
  *
  * @see requirements.RequirementsPackage#getModel()
@@ -65,5 +67,37 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<RequirentGroup> getGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Team</b></em>' containment reference list.
+	 * The list contents are of type {@link requirements.Team}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Team</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Team</em>' containment reference list.
+	 * @see requirements.RequirementsPackage#getModel_Team()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Team> getTeam();
+
+	/**
+	 * Returns the value of the '<em><b>Person</b></em>' containment reference list.
+	 * The list contents are of type {@link requirements.Person}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Person</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Person</em>' containment reference list.
+	 * @see requirements.RequirementsPackage#getModel_Person()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Person> getPerson();
 
 } // Model

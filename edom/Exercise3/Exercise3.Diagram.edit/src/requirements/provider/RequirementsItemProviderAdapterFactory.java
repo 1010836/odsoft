@@ -187,6 +187,52 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link requirements.Person} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PersonItemProvider personItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link requirements.Person}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPersonAdapter() {
+		if (personItemProvider == null) {
+			personItemProvider = new PersonItemProvider(this);
+		}
+
+		return personItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link requirements.Team} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TeamItemProvider teamItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link requirements.Team}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTeamAdapter() {
+		if (teamItemProvider == null) {
+			teamItemProvider = new TeamItemProvider(this);
+		}
+
+		return teamItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,6 +336,8 @@ public class RequirementsItemProviderAdapterFactory extends RequirementsAdapterF
 		if (requirementItemProvider != null) requirementItemProvider.dispose();
 		if (versionItemProvider != null) versionItemProvider.dispose();
 		if (commentItemProvider != null) commentItemProvider.dispose();
+		if (personItemProvider != null) personItemProvider.dispose();
+		if (teamItemProvider != null) teamItemProvider.dispose();
 	}
 
 }

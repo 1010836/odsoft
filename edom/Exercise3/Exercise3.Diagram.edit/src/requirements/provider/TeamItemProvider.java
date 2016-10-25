@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,17 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import requirements.Model;
-import requirements.RequirementsFactory;
 import requirements.RequirementsPackage;
+import requirements.Team;
 
 /**
- * This is the item provider adapter for a {@link requirements.Model} object.
+ * This is the item provider adapter for a {@link requirements.Team} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelItemProvider 
+public class TeamItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +45,7 @@ public class ModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelItemProvider(AdapterFactory adapterFactory) {
+	public TeamItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,25 +60,27 @@ public class ModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitlePropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addPersonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Title feature.
+	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTitlePropertyDescriptor(Object object) {
+	protected void addIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Model_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Model_title_feature", "_UI_Model_type"),
-				 RequirementsPackage.Literals.MODEL__TITLE,
+				 getString("_UI_Team_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Team_id_feature", "_UI_Team_type"),
+				 RequirementsPackage.Literals.TEAM__ID,
 				 true,
 				 false,
 				 false,
@@ -91,46 +90,58 @@ public class ModelItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(RequirementsPackage.Literals.MODEL__GROUPS);
-			childrenFeatures.add(RequirementsPackage.Literals.MODEL__TEAM);
-			childrenFeatures.add(RequirementsPackage.Literals.MODEL__PERSON);
-		}
-		return childrenFeatures;
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Team_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Team_name_feature", "_UI_Team_type"),
+				 RequirementsPackage.Literals.TEAM__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Person feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addPersonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Team_person_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Team_person_feature", "_UI_Team_type"),
+				 RequirementsPackage.Literals.TEAM__PERSON,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns Model.gif.
+	 * This returns Team.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Model"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Team"));
 	}
 
 	/**
@@ -141,10 +152,10 @@ public class ModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Model)object).getTitle();
+		String label = ((Team)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Model_type") :
-			getString("_UI_Model_type") + " " + label;
+			getString("_UI_Team_type") :
+			getString("_UI_Team_type") + " " + label;
 	}
 	
 
@@ -159,14 +170,10 @@ public class ModelItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Model.class)) {
-			case RequirementsPackage.MODEL__TITLE:
+		switch (notification.getFeatureID(Team.class)) {
+			case RequirementsPackage.TEAM__ID:
+			case RequirementsPackage.TEAM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RequirementsPackage.MODEL__GROUPS:
-			case RequirementsPackage.MODEL__TEAM:
-			case RequirementsPackage.MODEL__PERSON:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -182,21 +189,6 @@ public class ModelItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.MODEL__GROUPS,
-				 RequirementsFactory.eINSTANCE.createRequirentGroup()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.MODEL__TEAM,
-				 RequirementsFactory.eINSTANCE.createTeam()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RequirementsPackage.Literals.MODEL__PERSON,
-				 RequirementsFactory.eINSTANCE.createPerson()));
 	}
 
 	/**
