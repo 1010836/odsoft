@@ -1,0 +1,79 @@
+-- @path MM=/mindmap2requirements.atl/models/mindmap.ecore
+-- @path MM1=/mindmap2requirements.atl/models/requirements.ecore
+
+module mind2req;
+create OUT : MM1 from IN : MM;
+
+-- A counter for Requirement ID 
+helper def: contIdR: Integer = 1;
+-- A counter for RequirementGroup ID 
+helper def: contIdRG: Integer = 0;
+
+helper context Integer def: inc(): Integer = self + 1;
+
+-- Requirement 1
+rule Map2Model { 
+	from 
+		m1: MM!"Map"
+	to 
+		m2: MM1!Model (
+			title <- m1.title,
+			groups <- m1.rootTopics
+		)
+}
+
+-- Requirement 2
+rule rootTopic2RequirementGroup {
+	from
+		t: MM!Topic (
+			t.parent.oclIsUndefined()
+		)
+	to	
+		rg: MM1!RequirementGroup (
+			description <- t.description,
+			name <- t.description
+			--children <- t.subtopics->select(x | x.subtopics->isNotEmpty()), -- requirements com children
+			--children <- t.subtopics->select(x | x->isNotEmpty()), -- requirements com children
+			--children <- t->select(x | x.subtopics->isNotEmpty()), -- requirements com children
+			--requirements <- t.subtopics->select(y | y.subtopics->isEmpty())  -- requirements sem children
+		)
+	do { 
+		thisModule.contIdRG <- thisModule.contIdRG.inc(); 
+		rg.id <- 'G0' + thisModule.contIdRG; 
+	}
+}
+
+--Requirement 3 (falta adicionar o Requirement ao seu RequirementGroup)
+rule Topic2Requirement { 
+	from 
+		s: MM!Topic (s.subtopics->isEmpty() and not s.parent.oclIsUndefined()) 
+	to 
+		t: MM1!Requirement (
+			description <- s.description, 
+			title <- s.description, 
+			version <- version
+		), version: MM1!Version (
+			major <- 1,
+			minor <- 1,
+			service <- 1 
+		)
+	do { 
+		thisModule.contIdR <- thisModule.contIdR.inc(); 
+		t.id <- 'R0' + thisModule.contIdR; 
+	}
+}
+
+-- Requirement 4
+rule otherTopics2RequirementGroup {
+	from
+		s: MM!Topic (s.subtopics->notEmpty() and not s.parent.oclIsUndefined())
+	to
+		t: MM1!RequirementGroup (
+			description <- s.description
+	)
+	do { 
+		thisModule.contIdRG <- thisModule.contIdRG.inc(); 
+		t.id <- t.parent.id + '-' + thisModule.contIdRG; -- ?? é assim?
+		
+	}
+}
