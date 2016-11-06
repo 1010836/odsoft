@@ -4,22 +4,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
-        eType="#//RequirentGroup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="team" upperBound="-1" eType="#//Team"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" upperBound="-1"
-        eType="#//Person" containment="true"/>
+        eType="#//RequirementGroup" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequirentGroup">
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementGroup">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
         eType="#//Requirement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-        eType="#//RequirentGroup" containment="true" eOpposite="#//RequirentGroup/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//RequirentGroup"
-        eOpposite="#//RequirentGroup/children"/>
+        eType="#//RequirementGroup" containment="true" eOpposite="#//RequirementGroup/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//RequirementGroup"
+        eOpposite="#//RequirementGroup/children"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Requirement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,8 +25,10 @@
         defaultValueLiteral="HIGH"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="created" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//State"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolution" eType="#//Resolution"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//State"
+        defaultValueLiteral="NEW"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolution" eType="#//Resolution"
+        defaultValueLiteral="INVALID"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
         eType="#//Version" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
@@ -41,8 +39,7 @@
         eType="#//Requirement" containment="true" eOpposite="#//Requirement/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Requirement"
         eOpposite="#//Requirement/children"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="team" eType="#//Team"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//Person"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Version">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="major" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -64,7 +61,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Priority">
     <eLiterals name="HIGH"/>
     <eLiterals name="MEDIUM" value="1"/>
-    <eLiterals name="LOW" value="3"/>
+    <eLiterals name="LOW" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="State">
     <eLiterals name="NEW"/>
@@ -77,15 +74,5 @@
     <eLiterals name="ACCEPTED" value="1"/>
     <eLiterals name="IMPLEMENTED" value="2"/>
     <eLiterals name="LATER" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Team">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" lowerBound="2"
-        upperBound="-1" eType="#//Person"/>
   </eClassifiers>
 </ecore:EPackage>
