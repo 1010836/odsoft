@@ -30,12 +30,10 @@ rule rootTopic2RequirementGroup {
 		)
 	to	
 		rg: MM1!RequirementGroup (
+			name <- t.description,
 			description <- t.description,
-			name <- t.description
-			--children <- t.subtopics->select(x | x.subtopics->isNotEmpty()), -- requirements com children
-			--children <- t.subtopics->select(x | x->isNotEmpty()), -- requirements com children
-			--children <- t->select(x | x.subtopics->isNotEmpty()), -- requirements com children
-			--requirements <- t.subtopics->select(y | y.subtopics->isEmpty())  -- requirements sem children
+			children <- t.subtopics->select(x | x.subtopics->notEmpty()), -- RequirementGroups
+			requirements <- t.subtopics->select(y | y.subtopics->isEmpty())  -- Requirements
 		)
 	do { 
 		thisModule.contIdRG <- thisModule.contIdRG.inc(); 
@@ -49,8 +47,8 @@ rule Topic2Requirement {
 		s: MM!Topic (s.subtopics->isEmpty() and not s.parent.oclIsUndefined()) 
 	to 
 		t: MM1!Requirement (
-			description <- s.description, 
 			title <- s.description, 
+			description <- s.description, 
 			version <- version
 		), version: MM1!Version (
 			major <- 1,
@@ -69,11 +67,12 @@ rule otherTopics2RequirementGroup {
 		s: MM!Topic (s.subtopics->notEmpty() and not s.parent.oclIsUndefined())
 	to
 		t: MM1!RequirementGroup (
-			description <- s.description
+			description <- s.description,
+			requirements <- s.subtopics->select(y | y.subtopics->isEmpty())  -- Requirements
 	)
 	do { 
 		thisModule.contIdRG <- thisModule.contIdRG.inc(); 
-		t.id <- t.parent.id + '-' + thisModule.contIdRG; -- ?? é assim?
+		--t.id <- t.parent.id + '-' + thisModule.contIdRG; -- ?? é assim?
 		
 	}
 }
