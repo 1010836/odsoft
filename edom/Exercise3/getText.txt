@@ -1,0 +1,31 @@
+	public String getText(Object object) 
+	{
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(((Requirement) object).getId());
+		sb.append(" (");
+		requirements.Version version = ((Requirement) object).getVersion();
+		if (version != null)
+		{
+			sb.append(((Requirement) object).getVersion().getMajor());
+			sb.append(".");
+			sb.append(((Requirement) object).getVersion().getMinor());
+			sb.append(".");
+			sb.append(((Requirement) object).getVersion().getService());
+		}
+		else
+		{
+			sb.append("0.0.0");
+		}
+			
+		sb.append(") : ");
+		
+		sb.append(((Requirement) object).getTitle());
+
+		String label = sb.toString();
+		
+		return label == null || label.length() == 0 ? 
+		       getString("_UI_Requirement_type") : label;
+			
+						
+	}	
