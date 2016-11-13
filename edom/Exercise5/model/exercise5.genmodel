@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Exercise5/src" modelPluginID="Exercise5" modelName="Exercise5"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>exercise5.ecore</foreignModel>
+  <genPackages prefix="Exercise5" disposableProviderFactory="true" ecorePackage="exercise5.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="exercise5.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="exercise5.ecore#//Visibility/PRIVATE"/>
+      <genEnumLiterals ecoreEnumLiteral="exercise5.ecore#//Visibility/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="exercise5.ecore#//Visibility/PROTECTED"/>
+    </genEnums>
+    <genClasses ecoreClass="exercise5.ecore#//AnnotatedElement">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//AnnotatedElement/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Annotation/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Annotation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//StructuralFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//StructuralFeature/requiered"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//StructuralFeature/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//TypedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//TypedElement/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//TypedElement/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//TypedElement/visibility"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//TypedElement/type"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//PackageableElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//PackageableElement/package"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exercise5.ecore#//Package/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Classifier"/>
+    <genClasses ecoreClass="exercise5.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//Operation/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//Operation/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Parameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference exercise5.ecore#//Parameter/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Atribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//Atribute/datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Reference/containment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Reference/bidirectional"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference exercise5.ecore#//Reference/opposite"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//DataType/defaultLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="exercise5.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Class/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exercise5.ecore#//Class/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exercise5.ecore#//Class/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exercise5.ecore#//Class/features"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//Class/subclasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exercise5.ecore#//Class/superclasses"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
