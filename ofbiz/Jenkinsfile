@@ -1,0 +1,20 @@
+#!groovy
+node {
+
+   stage('Checkout') {
+      // Get some code from a GitHub repository
+      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ecb1ee13-2552-4a2e-bd64-85b1ded80b38', url: 'https://1010836@bitbucket.org/mei-isep/odsoft-2016-nmb-g101.git']]])
+   }
+   stage('Build Jar') {
+      // Run gradle buil
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+        sh './gradlew build'
+      }
+
+   }
+   stage('Archive Jar') {
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+        archiveArtifacts 'build/libs/ofbiz.jar'
+      }
+   }
+}
