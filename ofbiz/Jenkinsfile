@@ -2,19 +2,31 @@
 node {
 
    stage('Checkout') {
-      // Get some code from a GitHub repository
+      // Only checkout the code from the repository
       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ecb1ee13-2552-4a2e-bd64-85b1ded80b38', url: 'https://1010836@bitbucket.org/mei-isep/odsoft-2016-nmb-g101.git']]])
    }
    stage('Build Jar') {
-      // Run gradle buil
+      // Only obtain the jar ofbiz (ofbiz.jar)
       dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
-        sh './gradlew build'
+        sh './gradlew jar'
       }
 
    }
    stage('Archive Jar') {
+     //Archive the (ofbiz.jar) from the previous stage
       dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
         archiveArtifacts 'build/libs/ofbiz.jar'
       }
+   }
+   stage('Unit Tests') {
+
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+        // Run unit tests
+        sh './gradlew test'
+        //Publish the results of unit tests
+        junit allowEmptyResults: true, testResults: '/build/reports/tests/index.html'
+      }
+
+
    }
 }
