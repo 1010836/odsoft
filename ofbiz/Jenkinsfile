@@ -24,7 +24,7 @@ node {
         // Run unit tests
         sh './gradlew test'
         //Publish the results of unit tests
-        junit allowEmptyResults: true, testResults: '/build/reports/tests/index.html'
+        junit allowEmptyResults: true, testResults: 'build/reports/tests/index.html'
       }
 
 
