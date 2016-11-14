@@ -24,7 +24,8 @@ node {
         // Run unit tests
         sh './gradlew test'
         //Publish the results of unit tests
-        junit allowEmptyResults: true, testResults: 'build/reports/tests/index.html'
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'HTML Report'])
+
       }
 
 
