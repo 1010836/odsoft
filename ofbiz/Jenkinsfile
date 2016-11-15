@@ -21,8 +21,10 @@ node {
    stage('Unit Tests') {
 
       dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+      
         // Run unit tests
-        sh './gradlew test'
+        sh './gradlew test' || true
+        
         //Publish the results of unit tests
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'HTML Report'])
 
