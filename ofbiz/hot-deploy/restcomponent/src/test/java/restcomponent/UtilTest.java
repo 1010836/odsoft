@@ -26,4 +26,20 @@ public class UtilTest
     
   }
 
+  @Test
+  public void testConvertProdutSampleListGenericValueToJSONFail() 
+  {
+    
+    String expectedResult= "";
+    
+    GenericValue aGenValue=new GenericValueDummy();
+    List<GenericValue> listIn=new ArrayList<GenericValue>();
+    listIn.add(aGenValue);
+    
+    String result=Util.convertListGenericValueToJSON(listIn);
+    
+    assertEquals("Teste: ", expectedResult, result);
+    
+  }
+  
 }
