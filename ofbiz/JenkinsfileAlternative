@@ -8,7 +8,7 @@ node {
    }
    stage('Build Jar') {
       // Only obtain the jar ofbiz (ofbiz.jar)
-      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+      //dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
 	  
 
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
