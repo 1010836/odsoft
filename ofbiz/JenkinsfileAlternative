@@ -3,18 +3,12 @@ node {
 
    stage('Checkout') {
       // Only checkout the code from the repository
-      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'bitbucket-credentials', url: 'git@bitbucket.org:mei-isep/odsoft-2016-nmb-g101.git']]])
-	  //git credentialsId: 'bitbucket-credentials', url: 'git@bitbucket.org:mei-isep/odsoft-2016-nmb-g101.git'
+      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ecb1ee13-2552-4a2e-bd64-85b1ded80b38', url: 'https://1010836@bitbucket.org/mei-isep/odsoft-2016-nmb-g101.git']]])
    }
    stage('Build Jar') {
       // Only obtain the jar ofbiz (ofbiz.jar)
-      //dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
-        if (System.properties['os.name'].toLowerCase().contains('windows')) {
-			bat './gradlew jar'
-		} else {
-			sh './gradlew jar'
-		}
-		
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+        sh './gradlew jar'
       }
 
    }
