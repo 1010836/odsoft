@@ -23,7 +23,7 @@ node {
       dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
       
         // Run unit tests
-        sh 'teste.sh'
+        sh teste.sh
         
         //Publish the results of unit tests
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'HTML Report'])
