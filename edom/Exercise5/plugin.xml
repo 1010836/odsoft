@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated exercise5 -->
+      <package
+            uri="http://www.example.org/exercise5"
+            class="exercise5.Exercise5Package"
+            genModel="model/exercise5.genmodel"/>
+   </extension>
+
+</plugin>
