@@ -11,6 +11,24 @@
     <operations
         name="getClientRegister"
         type="//@contents.5"/>
+    <features
+        xsi:type="exercise5:Reference"
+        name=""
+        upperBound="1"
+        lowerBound="1"
+        type="//@contents.5"
+        containment="true"/>
+    <features
+        xsi:type="exercise5:Reference"
+        upperBound="-1"
+        lowerBound="1"
+        type="//@contents.3"
+        containment="true"/>
+    <features
+        xsi:type="exercise5:Reference"
+        upperBound="-1"
+        lowerBound="1"
+        containment="true"/>
   </contents>
   <contents
       xsi:type="exercise5:Class"
@@ -27,6 +45,18 @@
         xsi:type="exercise5:Atribute"
         name="description"
         type="//@contents.2"/>
+    <features
+        xsi:type="exercise5:Reference"
+        name="parent"
+        upperBound="1"
+        type="//@contents.1"
+        opposite="//@contents.1/@features.4"/>
+    <features
+        xsi:type="exercise5:Reference"
+        name="children"
+        upperBound="-1"
+        lowerBound="1"
+        opposite="//@contents.1/@features.3"/>
   </contents>
   <contents
       xsi:type="exercise5:Class"
@@ -78,6 +108,11 @@
           name="c"
           type="//@contents.4"/>
     </operations>
+    <features
+        xsi:type="exercise5:Reference"
+        upperBound="-1"
+        lowerBound="1"
+        type="//@contents.4"/>
   </contents>
   <contents
       xsi:type="exercise5:Class"
@@ -92,13 +127,16 @@
       name="EData"/>
   <contents
       xsi:type="exercise5:Class"
-      name="DailyManu">
+      name="DailyMenu">
     <features
         xsi:type="exercise5:Atribute"
         name="day"
         type="//@contents.8"/>
     <features
         xsi:type="exercise5:Reference"
-        name="defines"/>
+        name="defines"
+        upperBound="-1"
+        lowerBound="1"
+        type="//@contents.6"/>
   </contents>
 </exercise5:Package>
