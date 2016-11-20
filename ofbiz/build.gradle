@@ -25,6 +25,8 @@ import org.apache.tools.ant.filters.ReplaceTokens
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+apply plugin: 'jacoco'
+
 apply from: 'common.gradle'
 
 // operating system property
@@ -134,7 +136,7 @@ dependencies {
      * deleted from this file. They used to be compile time dependencies and we
      * converted them to runtime and OFBiz seems to operate normally without them.
      * We are keeping them until thorough testing is done to ensure correct
-     * operation without these libraries.  
+     * operation without these libraries.
      */
     runtime 'apache-xerces:resolver:2.9.1'
     runtime 'bouncycastle:bouncycastle-jce-jdk13:112'
@@ -651,11 +653,11 @@ task gitInfoFooter(group: committerGroup, description: 'Update the Git Branch-re
     def timestamp = new Date().format 'yyyy-MM-dd HH:mm:ss'
     File gitFooterFile = new File("${rootDir}/runtime/GitInfo.ftl")
     def gitFolder = new File("${rootDir}/../.git")
-    
+
     if(!gitFolder.exists()) {
       println ("Git is not used")
       return
-    }    
+    }
 
     def branchOutput = new ByteArrayOutputStream()
     exec{
@@ -685,11 +687,11 @@ task svnInfoFooter(group: committerGroup, description: 'Update the Subversion re
     File svnFooterFile = new File("${rootDir}/runtime/SvnInfo.ftl")
     def svnOutput = new ByteArrayOutputStream()
     def svnFolder = new File("${rootDir}/../.git")
-    
+
     if(!svnFolder.exists()) {
       println ("Subversion is not used")
       return
-    }    
+    }
 
     def branchOutput = new ByteArrayOutputStream()
     exec{
@@ -855,3 +857,19 @@ tasks.build.dependsOn(gitInfoFooter)
 tasks.build.dependsOn(svnInfoFooter)
 //----
 
+// Jacoco Configuration
+jacocoTestReport {
+                  reports {
+                           xml.enabled true
+                           csv.enabled false
+                           html.destination "${buildDir}/jacocoHtml"
+                          }
+                  // Para excluir certas classes do relatorio
+                  /*
+                  afterEvaluate {
+                                 classDirectories = files(classDirectories.files.collect {
+                                                                                          fileTree(dir: it, exclude: ’calculator/Main*’)
+                                                                                         })
+                                }
+                  */
+                 }

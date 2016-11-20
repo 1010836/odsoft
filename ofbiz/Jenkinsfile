@@ -21,15 +21,31 @@ node {
    stage('Unit Tests') {
 
       dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
-      
+
         // Run unit tests
         sh returnStatus: true, script: './gradlew test'
-        
+
         //Publish the results of unit tests
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'HTML Report'])
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'Tests'])
 
       }
 
 
    }
+
+   stage('Jacoco') {
+
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+
+        // Create Jacoco coverage report
+        sh './gradlew jacocoTestReport'
+
+        //Publish the results of unit tests
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Jacoco'])
+
+      }
+
+
+   }
+
 }
