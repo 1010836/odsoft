@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/exercise5')]
+
+
+[template public generateElement(aClass : Class)]
+  
+  [comment @main/]
+  [file (aClass.classFileName(), false, 'UTF-8')]
+package org.restaurant;
+
+public class [aClass.name.toUpperFirst()/] 
+{
+    [for (aReference:Reference| aClass.features->select(x|x.oclIsTypeOf(Reference)).oclAsType(Reference)) separator('\n')]
+  private [if (aReference.upperBound = -1)] ArrayList<[aReference.type.name/]> [aReference.name/];
+          [else] [aReference.type.name/] [aReference.name/];
+          [/if]
+    [/for]
+
+    [for (aAtribute:Atribute| aClass.features->select(x|x.oclIsTypeOf(Atribute)).oclAsType(Atribute)) separator('\n')]
+  private [aAtribute.type.name/] [aAtribute.name/];
+    [/for]
+
+    [for (aMethod:Operation| aClass.operations->select(x|x.oclIsTypeOf(Operation)).oclAsType(Operation)) separator('\n')]
+  private [aMethod.type.name/] [aMethod.name/] ( [for (aParameter:Parameter| aMethod.parameters->select(y|y.oclIsTypeOf(Parameter)).oclAsType(Parameter)) separator(',')] [aParameter.type.name/] [aParameter.name/] [/for]) {};
+    [/for]
+
+
+}
+  [/file]
+
+[/template]
+
+[query public classFileName(aClass: Class): String =aClass.name.concat('.java')/]
+

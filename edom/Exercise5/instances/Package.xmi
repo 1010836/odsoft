@@ -13,21 +13,24 @@
         type="//@contents.5"/>
     <features
         xsi:type="exercise5:Reference"
-        name=""
+        name="clrClient_RegisterL"
         upperBound="1"
         lowerBound="1"
         type="//@contents.5"
         containment="true"/>
     <features
         xsi:type="exercise5:Reference"
+        name="usrUsersL"
         upperBound="-1"
         lowerBound="1"
         type="//@contents.3"
         containment="true"/>
     <features
         xsi:type="exercise5:Reference"
+        name="ctgCategoriesL"
         upperBound="-1"
         lowerBound="1"
+        type="//@contents.1"
         containment="true"/>
   </contents>
   <contents
@@ -55,7 +58,7 @@
         xsi:type="exercise5:Reference"
         name="children"
         upperBound="-1"
-        lowerBound="1"
+        type="//@contents.1"
         opposite="//@contents.1/@features.3"/>
   </contents>
   <contents
@@ -111,6 +114,7 @@
     </operations>
     <features
         xsi:type="exercise5:Reference"
+        name="cltClientsL"
         upperBound="-1"
         lowerBound="1"
         type="//@contents.4"/>
@@ -136,8 +140,8 @@
     <features
         xsi:type="exercise5:Reference"
         name="defines"
-        upperBound="-1"
-        lowerBound="1"
+        upperBound="1"
+        lowerBound="-1"
         type="//@contents.6"/>
   </contents>
 </exercise5:Package>
