@@ -100,6 +100,7 @@
         name="addClient">
       <parameters
           name="c"
+          lowerBound="1"
           type="//@contents.4"/>
     </operations>
     <operations
