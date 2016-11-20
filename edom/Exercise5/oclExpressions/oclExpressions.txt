@@ -1,0 +1,32 @@
+1. List all classes V
+  Class.allInstances()
+  1.1 Package selected
+  self.contents->select(e | e.oclIsKindOf(Class))
+
+2. Present all classes without operations V
+  Class.allInstances()->select(c | c.operations->isEmpty())
+
+3. Show all operations without arguments V
+  Operation.allInstances()->select(o | o.parameters->isEmpty())
+
+4. List all classes with at least three attributes
+  Class.allInstances()->select(c | c.features->size() > 2)
+  Class.allInstances().features->select(f | f.oclIsTypeOf(Atribute))
+  
+  4.1 With error
+  Class.allInstances()->select(c | c.features.oclIsTypeOf(Atribute))
+  Class.allInstances().features->select(f | f.oclIsTypeOf(Atribute) and f.oclContainer().features->size()>2)
+  Class.allInstances()->select(c |  c.features->size() > 2 and c.features.oclIsTypeOf(Atribute))
+  4.2 Empty result
+  Class.allInstances()->select(c |  c.features->size() > 2 and c.features->oclIsTypeOf(Atribute))
+
+5. Present all mandatory parameters
+
+6. List, not all Datatype elements, but those used as type of at least one class’ attribute, without repetitions
+  6.1 Remove all repetitions
+
+ (Atribute.allInstances()->select(a | not a.type->isEmpty())->collect(c | c.oclAsType(Atribute).type))
+ (Atribute.allInstances()->select(a | not a.type->isEmpty())->collect(c | c.oclAsType(Atribute).type))->oclAsSet()
+
+7. Show all classes that have subclasses, without repetitions +/-
+Class.allInstances()->select(c | not c.subclasses->isEmpty())
