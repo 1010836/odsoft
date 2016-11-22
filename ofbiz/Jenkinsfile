@@ -37,7 +37,7 @@ node {
         }
     }
     
-    stage('Jacoco') {
+  stage('Jacoco Unit Tests') {
         dir('ofbiz') {
             // Create Jacoco coverage report
             if (isUnix()) {
@@ -49,4 +49,33 @@ node {
             publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Jacoco'])
         }
 	}
+
+   
+   stage('Integration Tests') {
+
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+
+        // Run integration tests
+        sh returnStatus: true, script: './gradlew ofbizIntegrationTest'        
+        
+      }
+
+
+   }
+   
+   stage('Jacoco Integration Tests') {
+
+      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
+
+        // Run integration tests
+        sh returnStatus: true, script: './gradlew ofbizCodeCoverageReport'
+
+        //Publish the results of unit tests
+        publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: '/build/reports/jacoco/ofbizCodeCoverageReport/html/', reportFiles: 'index.html', reportName: 'IntegrationTestsCoverage'])
+
+      }
+
+
+   }
+
 }

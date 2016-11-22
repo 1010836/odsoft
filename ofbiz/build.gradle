@@ -873,3 +873,21 @@ jacocoTestReport {
                                 }
                   */
                  }
+
+task ofbizIntegrationTests (type: JavaExec, dependsOn: build) {
+  jvmArgs(jvmArguments)
+  debug = false
+  classpath = files(buildDir.toString()+'/libs/'+project.name+'.jar')
+  main = ofbizMainClass
+  args.add('--test')
+  args.add('--portoffset 2000')
+  }
+
+jacoco {
+  applyTo ofbizIntegrationTests
+  }
+
+task ofbizCodeCoverageReport(type:JacocoReport){
+  executionData ofbizIntegrationTests
+  sourceSets sourceSets.main
+  }
