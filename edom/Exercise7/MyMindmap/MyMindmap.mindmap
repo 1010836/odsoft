@@ -1,0 +1,14 @@
+Map {
+	title : "Restaurant"
+	elements:
+		Topic {
+			// End and start dates are missing.
+			name: "LunchService"
+		}
+	elements:
+		Topic {
+			// End and start dates are missing.
+			name: "Order"
+			parent: LunchService
+		}
+}

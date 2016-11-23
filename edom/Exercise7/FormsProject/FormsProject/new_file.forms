@@ -1,0 +1,8 @@
+FORM "Order Meal" 
+	GROUP "appetizer" 
+	ITEM "Vegetarian" "First option for vegetarians" : CHOICE  ( "olives", "Bread", "Vegetable puffs") 
+	ITEM "Non Vegetarian" "First option for non vegetarians" : CHOICE  ( "melon with ham", "Pork puffs")
+	
+	GROUP "main dishes" 
+	ITEM "Vegetarian" "First option for vegetarians" : CHOICE  ( "Soy sausages with rice", "Vegetables and beans") 
+	ITEM "Non Vegetarian" "First option for non vegetarians" : CHOICE  ( "Chicken with rice", "Pork with fries")	

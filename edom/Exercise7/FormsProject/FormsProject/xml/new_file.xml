@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+
+<form titel="Order Meal"
+	xmlns="http://org.emftext.language.forms/metamodel/FormMM.xsd" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://org.emftext.language.forms/metamodel/FormMM.xsd schema/FormMM.xsd">
+<gruppe name="appetizer">
+<choice>
+<text>Vegetarian</text>
+<First option for vegetarians>fragenErklaerung</First option for vegetarians>
+<optionen mehrfach="false">
+<option id="">olives</option>
+<option id="">Bread</option>
+<option id="">Vegetable puffs</option>
+</optionen>
+</choice>
+<choice>
+<text>Non Vegetarian</text>
+<First option for non vegetarians>fragenErklaerung</First option for non vegetarians>
+<optionen mehrfach="false">
+<option id="">melon with ham</option>
+<option id="">Pork puffs</option>
+</optionen>
+</choice>
+</gruppe>
+<gruppe name="main dishes">
+<choice>
+<text>Vegetarian</text>
+<First option for vegetarians>fragenErklaerung</First option for vegetarians>
+<optionen mehrfach="false">
+<option id="">Soy sausages with rice</option>
+<option id="">Vegetables and beans</option>
+</optionen>
+</choice>
+<choice>
+<text>Non Vegetarian</text>
+<First option for non vegetarians>fragenErklaerung</First option for non vegetarians>
+<optionen mehrfach="false">
+<option id="">Chicken with rice</option>
+<option id="">Pork with fries</option>
+</optionen>
+</choice>
+</gruppe>
+</form>

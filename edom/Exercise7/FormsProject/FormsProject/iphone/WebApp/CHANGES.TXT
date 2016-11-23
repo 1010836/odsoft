@@ -1,0 +1,227 @@
+================================================================================
+0.5.0 RC5
+---------
+
+Javascript:
+
+    * ADDED: fullscreen support added to firmware v2.1
+    * ADDED: list right tap to show detail like with YouTube app
+    * ADDED: new hardware slide-in effect!
+    * ADDED: support for quicktime events with rel="media"
+    * ADDED: disabled state for checkboxes and radio buttons
+    * ADDED: classic link are now usable in tabs group
+    * ADDED: beginasync and endasync event to ease addition of custom loading indicator
+    * ADDED: a way to extend XHR object before request using willasync event (X-Requested-With...)
+    * ADDED: way to change URL and parameters of async request using "beginasync" event
+    * ADDED: animated loader using PNG!! (based on background-image content and WA.Loader)
+    * ADDED: the default callback is now passed as parameter to custom callback using WA.Request
+    * ADDED: disable new copy/paste feature of OS3 on most elements by default
+    * CHANGED: new definition of .iMore (add a <span> to show the new loader)
+    * CHANGED: new definition of #iLoader
+    * CHANGED: optimize a lot the style images (now only 35K with more images, was 87K in 0.3.9)
+    * CHANGED: iToggle action is now on full element instead of thumb only
+    * FIXED: jumpy layer when the browser needs to load an image in the destination layer (?)
+    * FIXED: better (perfect) HideBar code
+    * FIXED: fix radio group behavior with async response
+    * FIXED: full height initialization of active layer at startup (mainly with iList)
+    * FIXED: onclick behavior on <a>, transformed checkbox and radio group
+    * FIXED: InitCheck/InitRadio not called for async content if part is not in a destination (go) layer
+    * FIXED: checkbox/radio selection using JS (WA.Refresh)
+    * FIXED: "type error" using FocusFixer() - got rid of this function
+    * FIXED: fix the keyboard poping-up submiting a form (blank field appearing)
+    * FIXED: source layer not set properly in beginslide/endslide event
+    * FIXED: allow use of WA.Request before the document is fully loaded if the callback is not the default one (-1)
+    * FIXED: destination layer info not set properly for events when going to home layer
+    * FIXED: fix classic links with specified target when in <li>
+    * FIXED: bad context using onclick wrapper
+    * FIXED: shadow height using header form
+    * FIXED: async form submition if the form has an element called "action"...
+    * FIXED: tab selection at start up if WA.Tab is called before page load event
+    * FIXED: XML <script> element evaluation
+    * FIXED: some classics links in fullscreen mode
+    * FIXED: back button text if the previous title has been changed
+    * FIXED: WA.Form doesn't require a form anymore is no form has to be processed
+    * FIXED: (partially) disapearing text occurring just before slide effect sometimes
+    * FIXED: screen flickering in Safari while sliding on OS3.0 (OS bug)
+    * FIXED: broken mailto/maps... links in fullscreen mode
+    * FIXED: links not working in dialog content (WA.Form)
+    * FIXED: list selection state no properly reset in OS3.0 using media
+    * FIXED: radio not properly checked from async if the target is not a layer and form tag is already in DOM (Safari bug)
+    * REMOVED: useless WebApp.Toggle() method
+    * REMOVED: #iFooter
+    * REMOVED: error and success event. Use endasync event instead.
+
+CSS:
+
+    * ADDED: disabled state for .iToggle and .iRadio
+    * ADDED: active state on buttons
+    * ADDED: better iPanel elements (textarea, select, button style...)
+    * ADDED: full set of translucent png (adaptive styles)
+    * ADDED: pre-load common CSS background items
+    * FIXED: 2px iHeader top border
+    * FIXED: iMore rendering in iMenu list
+    * FIXED: 1px at bottom of iMenu <li> first child
+    * FIXED: text wrapping with <h2>
+    * FIXED: .iFooter class
+    * FIXED: RTL styles
+    * FIXED: loader indicator animation
+    * FIXED: right span padding with media link
+    * CHANGED: iMenu elements background is now on iMenu instead of <li>
+    * CHANGED: iList has now the background color instead of it <ul> children
+    * CHANGED: removed .iToggleOn class and use __sel instead like with other elements
+    * CHANGED: #iLoader is now really full screen and properly positioned
+    * CHANGED: put RTL support in another file
+
+
+Required changes to your code:
+
+    * iHeader has a full new definition you may want to change yours if customized
+    * Check that iMenu are rendered properly
+    * Check that iList has the proper background color
+    * Check your custom .iToggle checkbox
+    * Check the new #iLoader definition
+    * iMore has slightly changed with an extra <span> in it to show the new PNG loader
+
+================================================================================
+0.3.9
+-----
+
+Javascript:
+
+    * ADDED: Aspen Simulator to device detection
+    * ADDED: auto back option for radio buttons
+    * ADDED: script execution
+    * ADDED: automatically set webapp height to perfectly fit the available space
+    * CHANGED: display default back button text with wa__radio layer and hide home button
+    * FIXED: simple jump layer (#_) in full screen mode
+    * FIXED: let the developer define an empty <title>
+    * FIXED: "Undefined Value" error after page refresh
+    * FIXED: error posting top form with keyboard search button
+    * FIXED: set correct title for wa__radio layer
+    * FIXED: firmware 2.0 automatically send a back request after playing a video - we go back to previous layer
+    * FIXED: WA.Player play always the same media after page refresh
+    * FIXED: identification of active layer when it is the home layer (for iList, ...)
+    * FIXED: unselect <li> when synchronous link is used (mailto, tel, ...)
+    * FIXED: no slide-in effect if no header (FadeItem didn't use callback function if object is undefined)
+    * FIXED: asynchronous tab content not showing up
+    * FIXED: selection state not reset properly with non-asynchronous links in list
+
+
+CSS:
+
+    * ADDED: form labels
+    * CHANGED: adjust buttons styles (<a> colors,...) to let developers use them out of the header
+    * CHANGED: improved list rendering
+    * FIXED: shadowed style applied to text box introduced in firmware 2.0
+    * FIXED: handle <title> with image in back button
+
+
+Required changes to your code:
+
+    * background and border are now define at <li> level (was <ul>), you need to change your CSS accordingly for iMenu, iPanel and iBlock
+
+
+================================================================================
+0.3.5m
+------
+
+
+Javascript:
+
+    * ADDED: "tabchange" event, raised on tab click
+    * ADDED: "success" event, raised after an asynchronous response is properly handled
+    * ADDED: iMore can now be used on list element (to use with "self" mode for incremental lists)
+    * ADDED: layer background is now white if the first <div> is an iList
+    * FIXED: top form not showing properly if no <legend> tag is defined
+    * FIXED: textarea not handled by asynchronous forms
+    * FIXED: header content if the full active layer content is changed (remove buttons, tabs, ...)
+    * FIXED: enable proxy url with predefined query string parameters
+    * FIXED: multiple wa__radio layer was created using iRadio class in asynchronous response
+    * FIXED: simple asynchronous link if content is something else than text
+    * FIXED: jumping page going back and auto-scroll not looking so good
+    * FIXED: .iMore element can now handle new location (#_ or <go>)
+    * FIXED: slide-in effect sometimes hang
+    * FIXED: multiple CDATA section/text node support in XML response and allow empty data definition (<data/>)
+    (thanks to Iker and toolmantim for report and bugfix proposal)
+
+
+CSS:
+
+    * ADDED: iShop class to create nice items lists
+    * CHANGED: texts in iMenu now don't break anymore by default (overflow)
+    * CHANGED: main background is now set on #WebApp instead of <body> to help upcoming new effects
+    * FIXED: texts and borders in selection are now always white regardless of the parent element
+    * FIXED: added back waRightButton and waLeftButton for permanent buttons in the header
+    * FIXED: some RTL related styles
+
+
+Sample webapp
+
+    * ADDED: asynchronous example now use incremental list using "self" attribute
+    * ADDED: "replace content" to show full layer replacement and header behavior
+    * ADDED: iShop sample
+    * CHANGED: full asynchronous code has been updated to the lastest DTD
+
+
+Required changes to your code:
+
+    * If you were changing a whole layer content, you should check that header elements are still displayed as expected
+    * You should check that your custom iMenus break properly
+    * If you're using custom webapp background, you must change its definition
+
+
+Known issues
+
+    * auto-scroll will fail if the user tap browser back/forward buttons
+
+
+================================================================================
+0.3.0
+-----
+
+
+Javascript:
+
+    * ADDED: right-to-left language support!
+    * ADDED: Keep scrolling position among slides
+    * ADDED: XML <title> tag to change title from within asynchronous response
+    * ADDED: XML <go> tag to tell the framework where to go after an asynchronous request
+    * ADDED: proxy support for cross-domain requests
+    * ADDED: adjust asynchronous response format so that we can render multiple parts of the page at a time
+    * ADDED: ability to create layers dynamically
+    * ADDED: "self|before|after" destination mode (to ease incremental lists, ...)
+    * FIXED: top form not disappearing if active just before a page slide (commonly pressing browser button)
+    * FIXED: in-layer classic anchor support
+    * FIXED: fix menu item selection after asynchronous request with no destination layer (<go> or #_)
+    * FIXED: do not send <select> value if it has no name or if it is disabled
+    * FIXED: radio view if browser back button is pressed
+    * FIXED: NMTOKENS compliance with rev/rel and case insensitive
+    * FIXED: fix radio and checkbox rendering when loaded asynchronously
+    * FIXED: multi-lingual support with asynchronous forms too
+    * FIXED: correct gamma problem (on Mac) because of use of PNG and GIF in the header
+    * CHECK: support for sliding effect using firmware 2.0 transition effect
+    * CHECK: fullscreen support (iPhone 2.0)
+    (These last changes are disabled for verification since I don't own a v2 device)
+
+
+CSS:
+
+    * ADDED: right-to-left language support!
+    * FIXED: default width of header tabs
+    * FIXED: header height (2px less)
+    * FIXED: more header styles (title, buttons, ...)
+    * FIXED: no more need to use to create a list item with no link 
+
+
+Required changes to your code:
+
+    * You should adjust the definition of the width of your header tabs
+    * You should adapt your XML code according to recent changes:
+        - use <go> instead of <destination go="...">
+        - change the definition of <destination> element
+
+
+Known issues:
+
+    * text-overflow is not fully supported in RTL mode
+    * sliding effect is not supported under Firefox in RTL mode due to browser limitation
