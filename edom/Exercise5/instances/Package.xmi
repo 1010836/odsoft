@@ -10,12 +10,14 @@
       name="Restaurant">
     <operations
         name="getClientRegister"
+        visibility="PUBLIC"
         type="//@contents.5"/>
     <features
         xsi:type="exercise5:Reference"
         name="clrClient_RegisterL"
         upperBound="1"
         lowerBound="1"
+        visibility="PUBLIC"
         type="//@contents.5"
         containment="true"/>
     <features
@@ -23,6 +25,7 @@
         name="usrUsersL"
         upperBound="-1"
         lowerBound="1"
+        visibility="PUBLIC"
         type="//@contents.3"
         containment="true"/>
     <features
@@ -30,6 +33,7 @@
         name="ctgCategoriesL"
         upperBound="-1"
         lowerBound="1"
+        visibility="PUBLIC"
         type="//@contents.1"
         containment="true"/>
   </contents>
@@ -52,12 +56,14 @@
         xsi:type="exercise5:Reference"
         name="parent"
         upperBound="1"
+        visibility="PUBLIC"
         type="//@contents.1"
         opposite="//@contents.1/@features.4"/>
     <features
         xsi:type="exercise5:Reference"
         name="children"
         upperBound="-1"
+        visibility="PUBLIC"
         type="//@contents.1"
         opposite="//@contents.1/@features.3"/>
   </contents>
@@ -98,16 +104,20 @@
       name="ClientRegister">
     <operations
         name="newClient"
+        visibility="PUBLIC"
         type="//@contents.4"/>
     <operations
-        name="addClient">
+        name="addClient"
+        visibility="PUBLIC"
+        type="//@contents.10">
       <parameters
           name="c"
           lowerBound="1"
           type="//@contents.4"/>
     </operations>
     <operations
-        name="valida">
+        name="valida"
+        type="//@contents.10">
       <parameters
           name="c"
           type="//@contents.4"/>
@@ -117,6 +127,7 @@
         name="cltClientsL"
         upperBound="-1"
         lowerBound="1"
+        visibility="PUBLIC"
         type="//@contents.4"/>
   </contents>
   <contents
@@ -142,6 +153,10 @@
         name="defines"
         upperBound="1"
         lowerBound="-1"
+        visibility="PUBLIC"
         type="//@contents.6"/>
   </contents>
+  <contents
+      xsi:type="exercise5:Class"
+      name="EVoid"/>
 </exercise5:Package>
