@@ -879,8 +879,11 @@ task ofbizIntegrationTests (type: JavaExec, dependsOn: build) {
   debug = false
   classpath = files(buildDir.toString()+'/libs/'+project.name+'.jar')
   main = ofbizMainClass
+  /*
   args.add('--test')
   args.add('--portoffset 2000')
+  */
+  args = ['--test', '--portoffset 2000']
   }
 
 jacoco {
