@@ -1,9 +1,6 @@
 1. List all classes 
   Class.allInstances()
 
-  1.1 Package selected
-  self.contents->select(e | e.oclIsKindOf(Class))
-
 2. Present all classes without operations 
   Class.allInstances()->select(c | c.operations->isEmpty())
 
