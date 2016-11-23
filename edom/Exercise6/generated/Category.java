@@ -2,9 +2,9 @@ package org.restaurant;
 
 public class Category 
 {
-  private Category parent;
+  public  Category parent; 
 
-  private  ArrayList<Category> children;
+  public  ArrayList<Category> children; 
 
   private EString name;
 

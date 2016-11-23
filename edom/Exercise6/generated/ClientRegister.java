@@ -2,14 +2,14 @@ package org.restaurant;
 
 public class ClientRegister 
 {
-  private  ArrayList<Client> cltClientsL;
+  public  ArrayList<Client> cltClientsL; 
 
 
-  private Client newClient ( ) {};
+  public Client newClient ( ) {};
 
-  private invalid addClient (  Client c ) {};
+  public EVoid addClient (  Client c ) {};
 
-  private invalid valida (  Client c ) {};
+  private EVoid valida (  Client c ) {};
 
 
 }

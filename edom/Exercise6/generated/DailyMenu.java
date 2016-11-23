@@ -2,7 +2,7 @@ package org.restaurant;
 
 public class DailyMenu 
 {
-  private KitchenWorker defines;
+  public  KitchenWorker defines; 
 
   private EData day;
 

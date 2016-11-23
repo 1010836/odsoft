@@ -2,14 +2,14 @@ package org.restaurant;
 
 public class Restaurant 
 {
-  private ClientRegister clrClient_RegisterL;
+  public  ClientRegister clrClient_RegisterL; 
 
-  private  ArrayList<User> usrUsersL;
+  public  ArrayList<User> usrUsersL; 
 
-  private  ArrayList<Category> ctgCategoriesL;
+  public  ArrayList<Category> ctgCategoriesL; 
 
 
-  private ClientRegister getClientRegister ( ) {};
+  public ClientRegister getClientRegister ( ) {};
 
 
 }
