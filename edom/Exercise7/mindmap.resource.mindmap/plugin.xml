@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax">
+		<metaInformationProvider class="mindmap.resource.mindmap.mopp.MindmapMetaInformation" id="mindmap.resource.mindmap.mopp.MindmapMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<super type="org.eclipse.emf.ecore.diagnostic">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem.syntax_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mindmap.resource.mindmap.problem">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem.print_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mindmap.resource.mindmap.problem">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem.unresolved_reference" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mindmap.resource.mindmap.problem">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem.analysis_problem" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mindmap.resource.mindmap.problem">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.problem.builder_error" name="EMFText Problem" point="org.eclipse.core.resources.markers">
+		<persistent value="true">
+		</persistent>
+		<super type="mindmap.resource.mindmap.problem">
+		</super>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.nature" name="mindmap nature" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="mindmap.resource.mindmap.mopp.MindmapNature">
+			</run>
+		</runtime>
+		<builder id="mindmap.resource.mindmap.builder">
+		</builder>
+	</extension>
+	
+	<extension point="org.eclipse.core.resources.builders" id="mindmap.resource.mindmap.builder" name="mindmap Builder">
+		<builder hasNature="true">
+			<run class="mindmap.resource.mindmap.mopp.MindmapBuilderAdapter">
+			</run>
+		</builder>
+	</extension>
+	
+	<extension-point id="mindmap.resource.mindmap.default_load_options" name="Default Load Options" schema="schema/default_load_options.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.emf.ecore.extension_parser">
+		<parser class="mindmap.resource.mindmap.mopp.MindmapResourceFactoryDelegator" type="mindmap">
+		</parser>
+	</extension>
+	
+	<extension-point id="mindmap.resource.mindmap.additional_extension_parser" name="Additional Extension Parser" schema="schema/additional_extension_parser.exsd">
+	</extension-point>
+	
+	<extension point="org.eclipse.debug.core.breakpoints">
+		<breakpoint class="mindmap.resource.mindmap.debug.MindmapLineBreakpoint" id="mindmap.resource.mindmap.debug.breakpoint" markerType="mindmap.resource.mindmap.debug.lineBreakpoint.marker" name="mindmap Breakpoint">
+		</breakpoint>
+	</extension>
+	
+	<extension id="mindmap.resource.mindmap.debug.lineBreakpoint.marker" point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.debug.core.lineBreakpointMarker">
+		</super>
+		<super type="org.eclipse.core.resources.textmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.launchConfigurationTypes">
+		<launchConfigurationType id="mindmap.resource.mindmap.ui.launchConfigurationType" delegate="mindmap.resource.mindmap.launch.MindmapLaunchConfigurationDelegate" modes="run,debug" name="mindmap Application" sourceLocatorId="mindmap.resource.mindmap.ui.sourceLocator" sourcePathComputerId="mindmap.resource.mindmap.ui.sourcePathComputer" delegateName="mindmap Launch Tooling" delegateDescription="This will run or debug .mindmap files.">
+		</launchConfigurationType>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourcePathComputers">
+		<sourcePathComputer class="mindmap.resource.mindmap.debug.MindmapSourcePathComputerDelegate" id="mindmap.resource.mindmap.ui.sourcePathComputer">
+		</sourcePathComputer>
+	</extension>
+	
+	<extension point="org.eclipse.debug.core.sourceLocators">
+		<sourceLocator id="mindmap.resource.mindmap.ui.sourceLocator" class="mindmap.resource.mindmap.debug.MindmapSourceLocator" name="mindmap Source Locator">
+		</sourceLocator>
+	</extension>
+	
+</plugin>
