@@ -11,7 +11,7 @@ node {
             if (isUnix()) {
                 sh './gradlew jar'
             } else {
-                bat "./gradlew jar"
+                bat './gradlew jar'
             }
         }
    }
@@ -30,9 +30,10 @@ node {
                 sh returnStatus: true, script: './gradlew test'
             } else {
                 ignoreFailures = true
-                bat "./gradlew test"
+                //returnStatus = true
+                bat './gradlew test'
             }
-            //Publish the results of unit tests
+            // Publish the results of unit tests
             publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'build/reports/tests', reportFiles: 'index.html', reportName: 'Tests'])
         }
     }
@@ -43,39 +44,40 @@ node {
             if (isUnix()) {
                 sh './gradlew jacocoTestReport'
             } else {
-                bat "./gradlew jacocoTestReport"
+                bat './gradlew jacocoTestReport'
             }
-            //Publish the results of unit tests
+            // Publish the results of unit tests
             publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Jacoco'])
         }
 	}
 
    
    stage('Integration Tests') {
-
-      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
-
+      dir('ofbiz') {
         // Run integration tests
-        sh returnStatus: true, script: './gradlew ofbizIntegrationTest'        
-        
+        if (isUnix()) {
+            sh returnStatus: true, script: './gradlew ofbizIntegrationTest'
+        } else {
+            try {
+                bat './gradlew ofbizIntegrationTest'
+            } catch (e) {
+                //
+            }
+        }
       }
-
-
    }
    
    stage('Jacoco Integration Tests') {
-
-      dir('/var/lib/jenkins/workspace/ODSOFT_Exercise6/ofbiz') {
-
+      dir('ofbiz') {
         // Run integration tests
-        sh returnStatus: true, script: './gradlew ofbizCodeCoverageReport'
-
-        //Publish the results of unit tests
+        if (isUnix()) {
+            sh returnStatus: true, script: './gradlew ofbizCodeCoverageReport'
+        } else {
+            ignoreFailures = true
+            bat './gradlew ofbizCodeCoverageReport'
+        }
+        // Publish the results of unit tests
         publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: '/build/reports/jacoco/ofbizCodeCoverageReport/html/', reportFiles: 'index.html', reportName: 'IntegrationTestsCoverage'])
-
       }
-
-
    }
-
 }
