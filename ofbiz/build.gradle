@@ -875,6 +875,7 @@ jacocoTestReport {
                  }
 
 task ofbizIntegrationTests (type: JavaExec, dependsOn: build) {
+  ignoreFailures = true
   jvmArgs(jvmArguments)
   debug = false
   classpath = files(buildDir.toString()+'/libs/'+project.name+'.jar')
