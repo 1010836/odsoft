@@ -864,12 +864,6 @@ jacocoTestReport {
                            csv.enabled false
                            html.destination "${buildDir}/jacocoHtml"
                           }
-                  // Para excluir as classes *test* do relatório
-                  afterEvaluate {
-					 classDirectories = files(classDirectories.files.collect {
-					  fileTree(dir: it, exclude: ['**/*Test*.*'])
-					 })
-					}
                  }
 
 task ofbizIntegrationTests (type: JavaExec, dependsOn: build) {
@@ -882,6 +876,12 @@ task ofbizIntegrationTests (type: JavaExec, dependsOn: build) {
 
 jacoco {
   applyTo ofbizIntegrationTests
+  // Para excluir as classes *test* do relatório
+  afterEvaluate {
+	 classDirectories = files(classDirectories.files.collect {
+	  fileTree(dir: it, exclude: ['**/*Test*.*'])
+	 })
+	}
   }
 
 task ofbizCodeCoverageReport(type:JacocoReport){
