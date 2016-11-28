@@ -868,7 +868,7 @@ jacocoTestReport {
 						  // Para excluir as classes *test* do relatório
   afterEvaluate {
 	 classDirectories = files(classDirectories.files.collect {
-	  fileTree(dir: it, exclude: ['*test*'])
+	  fileTree(dir: it, exclude: ['org/apache/ofbiz/**/*test*'])
 	 })
 	}
                  }
