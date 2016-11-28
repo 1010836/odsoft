@@ -2,7 +2,7 @@
 node {
     stage('Checkout') {
         // Only checkout the code from the repository
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'bitbucket-credentials', url: 'https://bitbucket.org/mei-isep/odsoft-2016-nmb-g101.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'bitbucket-credentials', url: 'https://bitbucket.org/mei-isep/odsoft-2016-nmb-g101.git']]])
    }
    
    stage('Build Jar') {
