@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pl5:Model xmi:version="2.0" 
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pl5="http://www.example.org/pl5"
+    xsi:schemaLocation="http://www.example.org/pl5 ../models/Diagram.ecore"      
+    title="RestaurantMap">
+  <groups name="Restaurant" description="Restaurant" id="G01">
+    <children name="Lunch_Service" description="Lunch_Service" id="G01-2">
+      <requirements title="Order" description="Order" id="R02">
+        <version major="1" minor="1" service="1"/>
+      </requirements>
+      <requirements title="Payment" description="Payment" id="R03">
+        <version major="1" minor="1" service="1"/>
+      </requirements>
+    </children>
+    <children name="Evening_Service" description="Evening_Service" id="G01-3">
+      <requirements title="Reservation" description="Reservation" id="R04">
+        <version major="1" minor="1" service="1"/>
+      </requirements>
+    </children>
+    <children name="Client" description="Client" id="G01-4">
+      <requirements title="Non_Registered_Client" description="Non_Registered_Client" id="R05">
+        <version major="1" minor="1" service="1"/>
+      </requirements>
+      <children name="Registered_Client" description="Registered_Client" id="G01-4-5">
+        <requirements title="Client_Card" description="Client_Card" id="R06">
+          <version major="1" minor="1" service="1"/>
+        </requirements>
+      </children>
+    </children>
+  </groups>
+</pl5:Model>
