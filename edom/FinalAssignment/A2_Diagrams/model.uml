@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_18i_sLwdEeauv6Ok6tl_hg" name="RootElement">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_2B6n4LwdEeauv6Ok6tl_hg" name="Model Driven Devlopement for OfBiz" node="_ihNWcLwfEeauv6Ok6tl_hg _ve9w4LwgEeauv6Ok6tl_hg _QrrNYLwhEeauv6Ok6tl_hg _bV1C8LwhEeauv6Ok6tl_hg _qO0QcLwhEeauv6Ok6tl_hg _5Kx5cLwhEeauv6Ok6tl_hg _aCvN8LwiEeauv6Ok6tl_hg _kVYicLwiEeauv6Ok6tl_hg _yGRfcLwiEeauv6Ok6tl_hg _629R8LwiEeauv6Ok6tl_hg _YkxlsLwjEeauv6Ok6tl_hg _nOF_gLwjEeauv6Ok6tl_hg" group="_-QsRELwmEeauv6Ok6tl_hg _L2SkELwnEeauv6Ok6tl_hg">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_fg6mgLwlEeauv6Ok6tl_hg">
+      <body>The creation of the ecore metamodel
+will be done through the importation of the file:
+ofbiz/framework/entity/dtd/entitymodel.xsd
+This metamodel is very complex and as lots of 
+elements that we don't  need for our project
+So the model must be simplified
+
+</body>
+    </ownedComment>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_VATrULwhEeauv6Ok6tl_hg" target="_QrrNYLwhEeauv6Ok6tl_hg" source="_ihNWcLwfEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ARlkELwiEeauv6Ok6tl_hg" target="_qO0QcLwhEeauv6Ok6tl_hg" source="_QrrNYLwhEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_D0QZkLwiEeauv6Ok6tl_hg" target="_bV1C8LwhEeauv6Ok6tl_hg" source="_qO0QcLwhEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Mgl3kLwiEeauv6Ok6tl_hg" target="_5Kx5cLwhEeauv6Ok6tl_hg" source="_bV1C8LwhEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_s0FNELwiEeauv6Ok6tl_hg" name="ATL" target="_kVYicLwiEeauv6Ok6tl_hg" source="_aCvN8LwiEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1c_joLwiEeauv6Ok6tl_hg" name="ATL" target="_yGRfcLwiEeauv6Ok6tl_hg" source="_aCvN8LwiEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="__M2UILwiEeauv6Ok6tl_hg" name="ATL" target="_629R8LwiEeauv6Ok6tl_hg" source="_aCvN8LwiEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_QNkDILwjEeauv6Ok6tl_hg" name="yes" target="_aCvN8LwiEeauv6Ok6tl_hg" source="_5Kx5cLwhEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_sk-koLwjEeauv6Ok6tl_hg" name="no" target="_bV1C8LwhEeauv6Ok6tl_hg" source="_5Kx5cLwhEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_v3jIoLwjEeauv6Ok6tl_hg" target="_nOF_gLwjEeauv6Ok6tl_hg" source="_aCvN8LwiEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_wjawILwjEeauv6Ok6tl_hg" name="Acceleo" target="_YkxlsLwjEeauv6Ok6tl_hg" source="_nOF_gLwjEeauv6Ok6tl_hg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yeLMoLwjEeauv6Ok6tl_hg" target="_ve9w4LwgEeauv6Ok6tl_hg" source="_nOF_gLwjEeauv6Ok6tl_hg"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_-QsRELwmEeauv6Ok6tl_hg" name="Generated Code" node="_kVYicLwiEeauv6Ok6tl_hg _yGRfcLwiEeauv6Ok6tl_hg _629R8LwiEeauv6Ok6tl_hg"/>
+    <group xmi:type="uml:ActivityPartition" xmi:id="_L2SkELwnEeauv6Ok6tl_hg" name="Generated diagram" node="_YkxlsLwjEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_ihNWcLwfEeauv6Ok6tl_hg" name="" outgoing="_VATrULwhEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_ve9w4LwgEeauv6Ok6tl_hg" name="" incoming="_yeLMoLwjEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_QrrNYLwhEeauv6Ok6tl_hg" name="Create ecore metamocel" incoming="_VATrULwhEeauv6Ok6tl_hg" outgoing="_ARlkELwiEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_bV1C8LwhEeauv6Ok6tl_hg" name="Create intance" incoming="_D0QZkLwiEeauv6Ok6tl_hg _sk-koLwjEeauv6Ok6tl_hg" outgoing="_Mgl3kLwiEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_qO0QcLwhEeauv6Ok6tl_hg" name="Create OCL validations" incoming="_ARlkELwiEeauv6Ok6tl_hg" outgoing="_D0QZkLwiEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_5Kx5cLwhEeauv6Ok6tl_hg" name="Validate" incoming="_Mgl3kLwiEeauv6Ok6tl_hg" outgoing="_QNkDILwjEeauv6Ok6tl_hg _sk-koLwjEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_aCvN8LwiEeauv6Ok6tl_hg" name="Generate files" incoming="_QNkDILwjEeauv6Ok6tl_hg" outgoing="_s0FNELwiEeauv6Ok6tl_hg _1c_joLwiEeauv6Ok6tl_hg __M2UILwiEeauv6Ok6tl_hg _v3jIoLwjEeauv6Ok6tl_hg"/>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_kVYicLwiEeauv6Ok6tl_hg" name="EntityModel.xml" incoming="_s0FNELwiEeauv6Ok6tl_hg" inPartition="_-QsRELwmEeauv6Ok6tl_hg">
+      <upperBound xmi:type="uml:LiteralInteger" xmi:id="_kVlWwLwiEeauv6Ok6tl_hg" value="1"/>
+    </node>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_yGRfcLwiEeauv6Ok6tl_hg" name="Services.xml" incoming="_1c_joLwiEeauv6Ok6tl_hg" inPartition="_-QsRELwmEeauv6Ok6tl_hg">
+      <upperBound xmi:type="uml:LiteralInteger" xmi:id="_yGSGgLwiEeauv6Ok6tl_hg" value="1"/>
+    </node>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_629R8LwiEeauv6Ok6tl_hg" name="JavaRREST" incoming="__M2UILwiEeauv6Ok6tl_hg" inPartition="_-QsRELwmEeauv6Ok6tl_hg">
+      <upperBound xmi:type="uml:LiteralInteger" xmi:id="_6295ALwiEeauv6Ok6tl_hg" value="1"/>
+    </node>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_YkxlsLwjEeauv6Ok6tl_hg" name="UML Diagram Class" incoming="_wjawILwjEeauv6Ok6tl_hg" inPartition="_L2SkELwnEeauv6Ok6tl_hg">
+      <upperBound xmi:type="uml:LiteralInteger" xmi:id="_YkxlsbwjEeauv6Ok6tl_hg" value="1"/>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_nOF_gLwjEeauv6Ok6tl_hg" name="Transform model" incoming="_v3jIoLwjEeauv6Ok6tl_hg" outgoing="_wjawILwjEeauv6Ok6tl_hg _yeLMoLwjEeauv6Ok6tl_hg"/>
+  </packagedElement>
+</uml:Model>
