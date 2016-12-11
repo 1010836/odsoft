@@ -6,292 +6,70 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>finalAssignment.ecore</foreignModel>
   <genPackages prefix="FinalAssignment" disposableProviderFactory="true" ecorePackage="finalAssignment.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//AggregateFunction">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/min"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/max"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/sum"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/avg"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/count"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/countDistinct"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/upper"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/lower"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/extractYear"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/extractMonth"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//AggregateFunction/extractDay"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//Models">
+      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Models/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Models/OUT"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//Boolean">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Boolean/true"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Boolean/false"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//Types">
+      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Types/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Types/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//Types/DECIMAL"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//CombineType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//CombineType/and"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//CombineType/or"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//CombineType1">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//CombineType1/and"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//CombineType1/or"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//EncryptType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//EncryptType/true"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//EncryptType/false"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//EncryptType/salt"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//FilterByDateType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//FilterByDateType/true"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//FilterByDateType/false"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//FilterByDateType/byName"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//FunctionType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//FunctionType/lower"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//FunctionType/upper"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//OperatorType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/less"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/greater"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/lessEquals"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/greaterEquals"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/equals"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/notEquals"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/in"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/between"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//OperatorType/like"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="finalAssignment.ecore#//TypeType">
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//TypeType/one"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//TypeType/many"/>
-      <genEnumLiterals ecoreEnumLiteral="finalAssignment.ecore#//TypeType/oneNofk"/>
-    </genEnums>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//AggregateFunctionObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//BooleanObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//CombineTypeObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//CombineTypeObject1"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//EncryptTypeObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//FilterByDateTypeObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//FunctionTypeObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//OperatorTypeObject"/>
-    <genDataTypes ecoreDataType="finalAssignment.ecore#//TypeTypeObject"/>
-    <genClasses ecoreClass="finalAssignment.ecore#//AliasAllType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//AliasAllType/exclude"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/fieldSet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/groupBy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasAllType/prefix"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//OfBiz">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//OfBiz/services"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//OfBiz/entitymodel"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//AliasType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//AliasType/complexAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/colAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/field"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/fieldSet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/groupBy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//AliasType/primKey"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Services">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Services/service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Services/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Services/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Services/description"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ComplexAliasFieldType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasFieldType/defaultValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasFieldType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasFieldType/field"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasFieldType/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasFieldType/value"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Service">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Service/atribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Service/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Service/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Service/engine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Service/invoke"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ComplexAliasType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasType/group"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//ComplexAliasType/complexAlias"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//ComplexAliasType/complexAliasField"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ComplexAliasType/operator"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//EntityModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityModel/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityModel/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityModel/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityModel/description"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityModel/entity"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ConditionExprType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/fieldName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/ignoreCase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/relEntityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/relFieldName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionExprType/value"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Atribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Atribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Atribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Atribute/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Atribute/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Atribute/description"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ConditionListType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionListType/group"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//ConditionListType/conditionExpr"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//ConditionListType/conditionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ConditionListType/combine"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Entity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Entity/package"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Entity/title"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Entity/field"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Entity/primkey"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Entity/relation"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//DocumentRoot">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/mixed"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/xMLNSPrefixMap"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/xSISchemaLocation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/alias"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/aliasAll"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/author"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/complexAlias"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/complexAliasField"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/conditionExpr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/conditionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/copyright"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/defaultResourceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/entity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/entityCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/entitymodel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/exclude"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/extendEntity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/field"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/havingConditionList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/index"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/indexField"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/keyMap"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/memberEntity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/orderBy"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/primKey"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/relation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/title"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/validate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//DocumentRoot/version"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/viewEntity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//DocumentRoot/viewLink"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Field/title"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//EntityConditionType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityConditionType/conditionExpr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityConditionType/conditionList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityConditionType/havingConditionList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityConditionType/orderBy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityConditionType/distinct"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityConditionType/filterByDate"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Primkey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Primkey/field"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//EntitymodelType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/copyright"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/author"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/defaultResourceName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntitymodelType/group"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntitymodelType/entity"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntitymodelType/viewEntity"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntitymodelType/extendEntity"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Relation/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Relation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//Relation/entityName"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//Relation/keymap"/>
     </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//EntityType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityType/field"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityType/primKey"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityType/relation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//EntityType/index"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/author"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/autoClearCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/copyright"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/defaultResourceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/dependentOn"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/enableLock"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/entityName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/neverCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/neverCheck"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/noAutoStamp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/packageName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/redefinition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/sequenceBankSize"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/tableName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//EntityType/version"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ExcludeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExcludeType/field"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ExtendEntityType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ExtendEntityType/field"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ExtendEntityType/relation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ExtendEntityType/index"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/autoClearCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/defaultResourceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/dependentOn"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/enableLock"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/entityName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/neverCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/noAutoStamp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ExtendEntityType/sequenceBankSize"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//FieldType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//FieldType/validate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/colName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/enableAuditLog"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/encrypt"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/fieldSet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/notNull"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//FieldType/type"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//HavingConditionListType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//HavingConditionListType/group"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//HavingConditionListType/conditionExpr"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference finalAssignment.ecore#//HavingConditionListType/conditionList"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//HavingConditionListType/combine"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//IndexFieldType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//IndexFieldType/function"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//IndexFieldType/name"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//IndexType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//IndexType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//IndexType/indexField"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//IndexType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//IndexType/unique"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//KeyMapType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//KeyMapType/fieldName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//KeyMapType/relFieldName"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//MemberEntityType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//MemberEntityType/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//MemberEntityType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//MemberEntityType/entityName"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//OrderByType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//OrderByType/fieldName"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//PrimKeyType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//PrimKeyType/field"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//RelationType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//RelationType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//RelationType/keyMap"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//RelationType/fkName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//RelationType/relEntityName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//RelationType/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//RelationType/type"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ValidateType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ValidateType/name"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ViewEntityType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/memberEntity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/aliasAll"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/alias"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/viewLink"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/relation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewEntityType/entityCondition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/author"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/autoClearCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/copyright"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/defaultResourceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/dependentOn"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/entityName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/neverCache"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/packageName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/redefinition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewEntityType/version"/>
-    </genClasses>
-    <genClasses ecoreClass="finalAssignment.ecore#//ViewLinkType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewLinkType/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewLinkType/keyMap"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference finalAssignment.ecore#//ViewLinkType/entityCondition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewLinkType/entityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewLinkType/relEntityAlias"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//ViewLinkType/relOptional"/>
+    <genClasses ecoreClass="finalAssignment.ecore#//KeyMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//KeyMap/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute finalAssignment.ecore#//KeyMap/relFieldName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
