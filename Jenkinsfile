@@ -22,14 +22,7 @@ pipeline
         // Only obtain the jar ofbiz (ofbiz.jar)
         dir('ofbiz') 
         {
-          if (isUnix()) 
-          {
-            sh './gradlew jar'
-          } 
-          else 
-          {
-            bat './gradlew jar'
-          }
+          sh './gradlew jar'
         }
       }
     }
