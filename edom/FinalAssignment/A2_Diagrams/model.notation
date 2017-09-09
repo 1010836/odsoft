@@ -465,9 +465,9 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_BE3lcb8zEea1Crc33a4Olw"/>
       <element xmi:type="uml:Association" href="model.uml#_BEubgL8zEea1Crc33a4Olw"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BE3lcr8zEea1Crc33a4Olw" points="[42, 450, -643984, -643984]$[242, 527, -643984, -643984]$[248, 521, -643984, -643984]"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BE3lcr8zEea1Crc33a4Olw" points="[200, 447, -643984, -643984]$[306, 446, -643984, -643984]$[478, 446, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BFJSQL8zEea1Crc33a4Olw" id="(1.0,0.5235602094240838)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BFJSQb8zEea1Crc33a4Olw" id="(0.0,0.3559322033898305)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BFJSQb8zEea1Crc33a4Olw" id="(0.0,0.3482142857142857)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_NBiy0L8zEea1Crc33a4Olw" type="Association_Edge" source="_zY8oAL8yEea1Crc33a4Olw" target="_aX17AL8yEea1Crc33a4Olw">
       <children xmi:type="notation:DecorationNode" xmi:id="_NBiy078zEea1Crc33a4Olw" type="Association_StereotypeLabel">
