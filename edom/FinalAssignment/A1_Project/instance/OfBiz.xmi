@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FinalAssignment:OfBiz xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:FinalAssignment="http://org.eclipse.dsl/ofbiz" xsi:schemaLocation="http://org.eclipse.dsl/ofbiz ../model/finalAssignment.ecore">
+  <services type="http://www.w3.org/2001/XMLSchema-instance" location="http://ofbiz.apache.org/dtds/services.xsd" description="HelloWorld Services">
+    <service name="createRecipe" location="org.ofbiz.helloworld.services.MyServices" engine="java" invoke="createRecipe"/>
+    <service name="updateRecipe" location="org.ofbiz.helloworld.services.MyServices" engine="java" invoke="updateRecipe"/>
+  </services>
+  <entitymodel Type="http://www.w3.org/2001/XMLSchema-instance" location="http://ofbiz.apache.org/dtds/entitymodel.xsd" title="Entity of HelloWorld Component" description="None">
+    <entity name="Ingredient" package="org.ofbiz.bakery" title="One record for each ingredient that makes up a recipe">
+      <field name="ingredientId" title="id-ne"/>
+      <field name="ingredientName" title="id"/>
+      <field name="ingredientType" title="id"/>
+      <field name="packagingUomId" title="id"/>
+      <primkey field="ingredientId"/>
+      <relation type="one" name="REC_ING_UOM" entityName="Uom">
+        <keymap fieldName="packagingUomId" relFieldName="uomId"/>
+      </relation>
+    </entity>
+    <entity name="RecipeType" package="org.ofbiz.bakery" title="Recipes come in all shapes and sizes. Keep that info here."/>
+    <entity name="Recipe" package="org.ofbiz.bakery" title="Recipe holds information about our recipes"/>
+    <entity name="RecipeIngredient" package="org.ofbiz.bakery" title="A recipe is nothing more than a collection of ingredients.Here’s where the rubber meets the road."/>
+  </entitymodel>
+</FinalAssignment:OfBiz>

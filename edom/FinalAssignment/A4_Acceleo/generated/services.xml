@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+  
+  <description>HelloWorld Services</description>
+  
+  <vendor></vendor>
+  <version>1.0</version>
+
+    <service name="createRecipe" engine="java" location ="org.ofbiz.helloworld.services.MyServices" invoke="createRecipe">
+  
+      <description>createRecipe</description>
+
+    </service>
+
+
+    <service name="updateRecipe" engine="java" location ="org.ofbiz.helloworld.services.MyServices" invoke="updateRecipe">
+  
+      <description>updateRecipe</description>
+
+    </service>
+
+    
+</services>
+

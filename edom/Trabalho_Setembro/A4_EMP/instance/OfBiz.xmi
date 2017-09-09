@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ofbiz_EM:OfBiz xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ofbiz_EM="http://org.eclipse.dsl/ofbiz" xsi:schemaLocation="http://org.eclipse.dsl/ofbiz ../model/OfBiz.ecore">
+  <services type="http://www.w3.org/2001/XMLSchema-instance" location="http://ofbiz.apache.org/dtds/services.xsd" description="Serviços para o projeto MyRecipe">
+    <service engine="Java">
+      <atribute/>
+    </service>
+  </services>
+  <entitymodel>
+    <entity>
+      <field/>
+      <primkey/>
+      <relation/>
+    </entity>
+  </entitymodel>
+</Ofbiz_EM:OfBiz>

@@ -1,0 +1,68 @@
+[comment encoding = UTF-8 /]
+[module generate('http://org.eclipse.dsl/ofbiz')]
+
+
+[template public generateElement(etmCurrentP : EntityModel)]
+  
+  [comment @main/]
+  [file ('entitymodel.xml', false, 'UTF-8')]
+
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="[etmCurrentP.Type/]"
+    xsi:noNamespaceSchemaLocation="[etmCurrentP.location/]">
+    <!-- ========================================================= -->
+    <!-- ======================== Defaults ======================= -->
+    <!-- ========================================================= -->
+    <title>[etmCurrentP.title/]</title>
+    <description>[etmCurrentP.description/]</description>
+    <copyright></copyright>
+    <version></version>
+
+    [for (ettCurrenL:Entity|etmCurrentP.entity->select(x|x.oclIsTypeOf(Entity)).oclAsType(Entity)) separator('\n')]
+    <entity entity-name="[ettCurrenL.name/]"
+      package-name="[ettCurrenL._package/]"
+      title="[ettCurrenL.title/]">
+
+      [for (fldCurrenL:Field|ettCurrenL.field->select(x|x.oclIsTypeOf(Field)).oclAsType(Field)) separator('\n')]
+        <field name="[fldCurrenL.name/]" type="[fldCurrenL.title/]"></field>
+      [/for]
+
+    [/for]
+
+    </entity>
+
+</entitymodel>
+
+  [/file]
+
+[/template]
+
+[template public generateElement(srvCurrentP : Services)]
+  
+  [comment @main/]
+  [file ('services.xml', false, 'UTF-8')]
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<services xmlns:xsi="[srvCurrentP.type/]"
+  xsi:noNamespaceSchemaLocation="[srvCurrentP.location/]">
+  
+  <description>[srvCurrentP.description/]</description>
+  
+  <vendor></vendor>
+  <version>1.0</version>
+
+    [for (srvCurrenL:Service|srvCurrentP.service->select(x|x.oclIsTypeOf(Service)).oclAsType(Service)) separator('\n')]
+    <service name="[srvCurrenL.name/]" engine="[srvCurrenL.engine/]" location ="[srvCurrenL.location/]" invoke="[srvCurrenL.invoke/]">
+  
+      <description>[srvCurrenL.name/]</description>
+
+    </service>
+
+    [/for]
+    
+</services>
+
+  [/file]
+
+[/template]
