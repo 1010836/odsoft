@@ -21,9 +21,7 @@
 package main.java.ofbizrestclientdemo;
 
 import java.io.StringReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Map;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -35,9 +33,9 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
-import javax.json.JsonValue;
 
-public class Main {
+public class Main 
+{
 	
 	
 	/**
@@ -46,23 +44,31 @@ public class Main {
 	 * https://localhost:8443/webtools/control/ServiceList?sel_service_name=ping
 	 * Note: see the "restcomponent" for details on how the rest service is implemented on the server
 	 */
-	public static void testPing() {
-        Client client = ClientBuilder.newClient();
+	public static void testPing() 
+	{
+  
+	  Client client = ClientBuilder.newClient();
 
-    	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
-    	headerMap.put("login.username", Arrays.asList(new Object [] { "admin" }));
-       	headerMap.put("login.password", Arrays.asList(new Object [] { "ofbiz" }));
+  	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
+
+  	headerMap.put("login.username", Arrays.asList(new Object [] { "admin" }));
+    headerMap.put("login.password", Arrays.asList(new Object [] { "ofbiz" }));
  
-        Response response = client.target("http://localhost:8080/restcomponent/ping/ola").request("text/plain")
-        		.headers(headerMap).get();
+      Response response = client
+                            .target("http://localhost:8080/restcomponent/ping/ola")
+                            .request("text/plain")
+                            .headers(headerMap)
+                            .get();
 
-        if (response.getStatus()==200) {
-        	System.out.println(response.readEntity(String.class));
-        }
-        else
-        {
-        	System.out.println("Error!");        	
-        }
+      if (response.getStatus()==200) 
+      {
+      	System.out.println(response.readEntity(String.class));
+      }
+      else
+      {
+      	System.out.println("Error!");        	
+      }
+
 	}
 
 	/**
@@ -71,37 +77,72 @@ public class Main {
 	 * https://localhost:8443/webtools/control/ArtifactInfo?name=Product&type=entity
 	 * Note: see the "restcomponent" for details on how the rest service is implemented on the server
 	 */
-	public static void testGetProduct(String productId) {
-        Client client = ClientBuilder.newClient();
+	public static void testGetProduct(String productId) 
+	{
+	  
+	  Client client = ClientBuilder.newClient();
 
     	MultivaluedMap<String, Object> headerMap = new MultivaluedHashMap<String, Object> ();
+    	
     	headerMap.put("login.username", Arrays.asList(new Object [] { "admin" }));
-       	headerMap.put("login.password", Arrays.asList(new Object [] { "ofbiz" }));
+      headerMap.put("login.password", Arrays.asList(new Object [] { "ofbiz" }));
  
-        Response response = client.target("http://localhost:8080/restcomponent/product/"+productId).request("application/json")
-        		.headers(headerMap).get();
+      Response response = client
+                            .target("http://localhost:8080/restcomponent/product/"+productId)
+                            .request("application/json")
+                            .headers(headerMap)
+                            .get();
 
-        if (response.getStatus()==200) {
-        	String stringObj=response.readEntity(String.class);
-        	
-        	JsonReader jsonReader = Json.createReader(new StringReader(stringObj));
-        	
-        	JsonObject jsonObj = jsonReader.readObject();
+      if (response.getStatus()==200) 
+      {
+      
+        String     stringObj  = response.readEntity(String.class);
+        JsonReader jsonReader = Json.createReader(new StringReader(stringObj));       	
+        JsonObject jsonObj    = jsonReader.readObject();
 
-        	System.out.println("Get Product:");    
-			System.out.print("Product ID=" + jsonObj.getString("productId") + 
-					", Internal Name=" + jsonObj.getString("internalName"));
-			if (jsonObj.isNull("productName")) System.out.println(", Product Name= <>");
-			else System.out.println(", Product Name=" + jsonObj.getString("productName"));
-			if (jsonObj.isNull("description")) System.out.println(", Description= <>");
-			else System.out.println(", Description=" + jsonObj.getString("description"));
-			if (jsonObj.isNull("comments")) System.out.println(", Comments= <>");
-			else System.out.println(", Comments=" + jsonObj.getString("comments")); 
+        System.out.println("Get Product:");    
+        System.out.print
+        (
+            "Product ID=" + jsonObj.getString("productId") + 
+            ", Internal Name=" + jsonObj.getString("internalName")
+        );
+        
+        //Name
+        if (jsonObj.isNull("productName"))
+        {
+          System.out.println(", Product Name= <>");
+        }  
+        else
+        {
+          System.out.println(", Product Name=" + jsonObj.getString("productName"));
+        }  
+			
+        //Description
+        if (jsonObj.isNull("description"))
+        {
+          System.out.println(", Description= <>");
+        }  
+        else
+        {
+          System.out.println(", Description=" + jsonObj.getString("description"));
+        }
+        
+        //Comments
+        if (jsonObj.isNull("comments"))
+        {
+          System.out.println(", Comments= <>");
         }
         else
         {
-        	System.out.println("Error!");        	
+          System.out.println(", Comments=" + jsonObj.getString("comments"));        
         }
+        
+      }
+      else
+      {
+        System.out.println("Error!");        	
+      }
+      
 	}
 	
 	/**
@@ -271,26 +312,32 @@ public class Main {
         }
 	}
 
-	public static void main(String[] args) {
-		String productId=null;
+	public static void main(String[] args) 
+	{
+	
+	  String productId=null;
 		
 		testPing();
 		System.out.println("");
 		
+		/*
 		testGetProduct("GC-001-C100");
 		System.out.println("");
 		
-		testGetProductByName("Gift Card Activation"); // devolve uma lista, porque o productName não é único
+		testGetProductByName("Gift Card Activation"); // devolve uma lista, porque o productName nï¿½o ï¿½ ï¿½nico
 		System.out.println("");
 		
 		testGetProducts();
 		System.out.println("");
 		
 		productId = testCreateProduct();
-		if (productId != null) {
+		if (productId != null) 
+		{
 			testGetProduct(productId);
 			testUpdateProduct(productId, "Update Internal Name Test", "Update Product Name Test", "Update Product Description", "Update Product Comments");
 			// Delete the previous product - unavailable operation
 		}
+		*/
+		
 	}
 }
